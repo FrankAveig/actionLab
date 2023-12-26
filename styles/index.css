@@ -746,7 +746,7 @@ body {
   -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.register .form select {
+.register .form select, .register .form input {
   width: 100%;
   height: 50px;
   border: none;
@@ -759,13 +759,6 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
-}
-.register .form input {
-  height: 50px;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  padding: 0 10px;
-  margin-bottom: 20px;
 }
 .register .form input::-webkit-input-placeholder {
   color: #000;
