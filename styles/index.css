@@ -843,6 +843,99 @@ body {
      object-position: center;
 }
 
+footer {
+  background-color: #343a40; /* Un color oscuro para el fondo */
+  color: #ffffff; /* Texto claro para un buen contraste */
+  padding: 40px 0; /* Algo de relleno alrededor del contenido */
+}
+footer .container {
+  width: 80%;
+  margin: 0 auto; /* Centra el contenedor */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* Distribuye los elementos del footer en línea */
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; /* Espacia los elementos del footer uniformemente */
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+footer .footer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+footer .footer-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 10px; /* Espacio alrededor de cada elemento del footer */
+}
+footer .footer-logo {
+  width: 150px; /* Tamaño del logo */
+  margin-bottom: 10px; /* Espacio debajo del logo */
+}
+footer .footer-text {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 20px; /* Espacio debajo del texto */
+}
+footer .footer-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+footer .social-link {
+  display: block;
+  margin-right: 10px; /* Espacio entre los iconos */
+}
+footer .footer-title {
+  font-size: 18px;
+  margin-bottom: 15px; /* Espacio debajo del título */
+}
+footer .footer-list {
+  list-style-type: none; /* Remueve los estilos de lista por defecto */
+  padding-left: 0; /* Remueve el relleno por defecto */
+}
+footer .footer-list-item {
+  margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+}
+footer .footer-link {
+  color: #ffffff; /* Color de los enlaces */
+  text-decoration: none; /* Remueve el subrayado de los enlaces */
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease; /* Transición suave para el color */
+}
+footer .footer-link:hover {
+  color: #1abc9c; /* Cambia el color al pasar el mouse */
+}
+footer .footer-icon {
+  margin-right: 5px; /* Espacio entre el icono y el texto */
+}
+@media (max-width: 768px) {
+  footer .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 95%;
+  }
+  footer .footer-item {
+    margin: 10px 0;
+    text-align: center; /* Centra el texto para dispositivos móviles */
+  }
+  footer .footer-social {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; /* Centra los iconos sociales para dispositivos móviles */
+  }
+}
+
 .line {
   width: 15%;
   height: 3px;
