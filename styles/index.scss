@@ -494,7 +494,7 @@ body{
   .event-info {
     max-height: 0;
     overflow: hidden;
-
+    max-width: 750px;
    
     transition: max-height 0.3s ease-in-out;
   }
@@ -537,7 +537,7 @@ body{
   .event-detail {
     flex-grow: 1;
     border-left: 2px solid #d9534f;
-    padding: 0px  20px 0px 40px;
+    padding: 0px 20px 40px 40px;
     
   }
   
@@ -545,7 +545,7 @@ body{
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
     color: #333;
-    line-height: 34px;
+
 
     margin: 0;
   }
@@ -558,8 +558,8 @@ body{
   }
   
   .speaker-photo {
-    width: 50px; /* Ajusta según el diseño */
-    height: 50px; /* Ajusta según el diseño */
+    width: 150px; /* Ajusta según el diseño */
+    height: 150px; /* Ajusta según el diseño */
     border-radius: 50%;
     margin-right: 10px;
   }
