@@ -451,6 +451,7 @@ body {
   font-size: 42px;
   margin-bottom: 20px;
   font-family: Raleway, sans-serif;
+  width: 100%;
   display: inline-block;
 }
 
@@ -537,16 +538,67 @@ body {
   color: #666666;
 }
 
+.reasons2::after {
+  content: "";
+  position: absolute;
+  z-index: 9;
+  right: -250px;
+  bottom: 0;
+  background-image: url(../assets/images/backgrounds/home-corner-right.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 725px;
+  background-position: right;
+}
+
 .schedule {
   padding: 20px 0;
-  /* Añade estilos responsivos según sea necesario */
+  max-width: 1200px;
+  position: relative;
+  margin: auto;
+  /*  @media (max-width: 768px) {
+     .schedule-item {
+       flex-direction: column;
+     }
+
+     .time {
+       text-align: left;
+       padding-right: 0;
+     }
+
+     .event-detail {
+       border-left: none;
+       padding-top: 0;
+     }
+   } */
+}
+.schedule .container__schedule {
+  padding-left: 80px;
 }
 .schedule .event-info {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
+}
+.schedule .line {
+  margin-bottom: 5px;
+}
+.schedule .section-description {
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #242732;
+  margin-bottom: 40px;
+}
+.schedule .event-info.isActive {
+  max-height: 1000px; /* un valor suficientemente grande */
+  opacity: 1;
 }
 .schedule .container {
-  max-width: 800px;
+  width: 1200px;
   margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .schedule .schedule-item {
   display: -webkit-box;
@@ -565,12 +617,14 @@ body {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  border-left: 4px solid #d9534f;
-  padding: 10px 20px;
-  background: #f9f9f9;
+  border-left: 2px solid #d9534f;
+  padding: 0px 20px 0px 40px;
 }
 .schedule .event-name h3 {
   font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  line-height: 34px;
   margin: 0;
 }
 .schedule .speaker-detail {
@@ -595,7 +649,9 @@ body {
   text-align: left;
 }
 .schedule .speaker-name {
-  font-weight: bold;
+  font-weight: 400;
+  line-height: 22px;
+  color: #D9534F;
   margin: 0;
 }
 .schedule .speaker-title {
@@ -619,38 +675,132 @@ body {
 }
 .schedule .toggle-button {
   position: absolute;
-  left: 15.2%;
-  top: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 11%;
+  top: 0%;
   border-radius: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background: #D9534F;
   border: none;
   cursor: pointer;
-  font-size: 20px; /* Asegúrate de que el tamaño de la fuente sea adecuado */
-  color: #fff; /* El color que prefieras para la flecha */
-  padding: 5px; /* Ajusta el padding si es necesario */
-  margin-left: auto; /* Alinea el botón a la derecha si estás usando flexbox */
+  padding: 0;
+  font-size: 20px;
+  color: #fff;
+  margin-left: auto;
+  margin-top: 10px;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease; /* Para un efecto de giro suave */
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
-@media (max-width: 768px) {
-  .schedule .schedule-item {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .schedule .time {
-    text-align: left;
-    padding-right: 0;
-  }
-  .schedule .event-detail {
-    border-left: none;
-    padding-top: 0;
-  }
+.schedule .toggle-image {
+  height: 20px;
+  width: 20px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.register {
+  background-image: url(../assets/images/backgrounds/pattern-4.webp);
+  padding: 140px 15px;
+  position: relative;
+  background-size: cover;
+  gap: 40px;
+}
+.register .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.register .text, .register .form {
+  width: 40%;
+}
+.register .text h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-family: Raleway, sans-serif;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+.register .line {
+  margin-bottom: 0;
+}
+.register .first-text {
+  font-weight: 500;
+}
+.register .form {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.register .form select {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+.register .form .row2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.register .form input {
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+.register .form input::-webkit-input-placeholder {
+  color: #000;
+}
+.register .form input::-moz-placeholder {
+  color: #000;
+}
+.register .form input:-ms-input-placeholder {
+  color: #000;
+}
+.register .form input::-ms-input-placeholder {
+  color: #000;
+}
+.register .form input::placeholder {
+  color: #000;
+}
+.register .form .cta {
+  background-color: #da1a5d;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-top: 20px;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+.register .form .cta:hover {
+  background-color: transparent;
+  border: 1px solid #da1a5d;
+  color: #da1a5d;
 }
 
 .line {
