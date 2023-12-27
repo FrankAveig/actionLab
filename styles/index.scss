@@ -75,6 +75,10 @@ body{
         text-align: left;
         position: relative;
         z-index: 19;
+        @media (max-width:800px) {
+          width: 90%;
+          margin-left: 40px;
+        }
         h1{
             font-size: 2rem;
             margin: 0;
@@ -161,7 +165,14 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
-   
+        @media (max-width: 800px) {
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @media (max-width: 500px) {
+            flex-direction: column; 
+        }
         .content{
             display: flex;
             align-items: center;
@@ -172,7 +183,13 @@ body{
                 font-weight: 600;
                 color: #444349;
             }
-        }
+          }
+          .date{
+            @media (max-width: 500px) {
+              display: flex;
+              gap: 20px;
+            }
+          }
         .countdown{
             display: flex;
             
@@ -181,7 +198,9 @@ body{
                 flex-direction: column;
                 align-items: center;
                 margin: 0 10px;
-                
+                @media (max-width:500px) {
+                  margin: 0 3px;
+                }
                 span{
                     color: #444349;
                     padding: 10px;
@@ -235,7 +254,11 @@ body{
     width: 100%;
     height: 725px;
     background-position: right;
-}
+    @media (max-width: 800px) {
+        display: none;
+      
+    }
+  }
 
 
 .main{
@@ -245,9 +268,20 @@ body{
     width: 80%;
     margin: 100vh  auto 0 auto;
     position: relative;
+    @media (max-width: 500px) {
+       
+        padding: 0px;
+
+      
+    }
     .main__description{
         display: flex;
         gap: 50px;
+        @media (max-width: 800px) {
+          flex-wrap: wrap;
+          justify-content: center;
+          
+        }
         .text{
             h2{
                 font-weight: 800;
@@ -257,6 +291,12 @@ body{
                 position: relative;
                 z-index: 1;
                 display: inline-block;
+                @media (max-width: 500px) {
+       
+                  font-size: 24px;
+          
+                
+              }
             }
             p{
                 line-height: 30px;
@@ -310,6 +350,12 @@ body{
     z-index: 1;
     display: flex;
     justify-content: center;
+    @media (max-width:800px) {
+      padding: 42px;
+    }
+    @media (max-width:800px) {
+      padding: 22px;
+    }
 }
 .event-section {
     max-width: 800px;
@@ -329,13 +375,19 @@ body{
     z-index: 3;
     text-align: left;
     margin-bottom: 30px;
-
     font-size: 42px;
     margin-bottom:20px;
     font-family: Raleway,sans-serif;
-
-
     display: inline-block;
+
+    @media (max-width:800px) {
+      margin-left: 40px;
+      font-size: 38px;
+    }
+    @media (max-width:800px) {
+      margin-left: 0px;
+      font-size: 24px;
+    }
   }
   
   .criteria-list {
@@ -377,6 +429,11 @@ body{
     background: #f8f9fa;
     position: relative;
     z-index: 8;
+    @media(max-width:500px){
+      width: 80%;
+      margin: 0 auto;
+      padding: 0px 0 30px 0;
+    }
     .line{
         margin-bottom: 0;
     }
@@ -399,6 +456,9 @@ body{
     font-family: Raleway,sans-serif;
     width: 100%;
     display: inline-block;
+    @media(max-width:500px){
+      font-size: 24px;
+    }
   }
   
   .keynote-speakers p {
@@ -434,6 +494,11 @@ body{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px; 
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
+      
+    }
   }
   .speaker_img{
     width: 100%;
@@ -441,6 +506,11 @@ body{
     object-fit: cover;
     object-position: center;
     overflow: hidden;
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      height: auto;
+      
+    }
   }
   .speaker {
     background: #ffffff; 
@@ -510,6 +580,11 @@ body{
     width: 100%;
     height: 725px;
     background-position: right;
+    @media (max-width: 500px) {
+      display: none;
+    
+      
+    }
   }
   
   .schedule {
@@ -517,7 +592,9 @@ body{
     max-width: 1200px;
     position: relative;
     margin: auto;
-
+    @media (max-width:1200px) {
+      max-width:fit-content;
+    }
     .point1{
       position: absolute;
       display: flex;
@@ -529,9 +606,18 @@ body{
       border: none;
       width: 12px;
       height: 12px;
+      @media (max-width:1200px) {
+        left: 17.7%; 
+      }
+      @media(max-width:500px){
+        left: 43%;
+      }
   }
   .container__schedule{
     padding-left: 80px;
+    @media (max-width:500px) {
+      padding-left:0%;
+    }
   }	
   .event-info {
     max-height: 0;
@@ -560,12 +646,18 @@ body{
       width: 1200px;
       margin: 0 auto;
       box-sizing: border-box;
+      @media (max-width:1200px) {
+        max-width:fit-content;
+      }
   }
   
   .schedule-item {
     display: flex;
 
     position: relative;
+    @media (max-width:500px) {
+      max-width: 300px;
+    }
   }
   
   .time {
@@ -580,6 +672,9 @@ body{
     flex-grow: 1;
     border-left: 2px solid #d9534f;
     padding: 0px 20px 40px 40px;
+    @media (max-width:500px) {
+      max-width: 100px;
+    }
     
   }
   .schedule-item:last-child .event-detail{
@@ -604,6 +699,10 @@ body{
     justify-content: start;
     align-items: center;
     margin-top: 10px;
+    @media (max-width:800px) {
+      flex-direction: column;
+      align-items: start;
+    }
   }
   
    .speaker-detail .speaker-photo {
@@ -612,11 +711,20 @@ body{
     border-radius: 50%;
     margin-right: 10px;
     filter: grayscale(0);
-    
+    @media(max-width:500px){
+      width: 50px;
+      height: 50px;
+    }
   }
   
   .speaker-info {
     text-align: left;
+    @media (max-width:1200px) {
+      width: 500px;
+    }
+    @media(max-width:500px){
+      width: 90%;
+    }
   }
   
   .speaker-name {
@@ -661,6 +769,12 @@ body{
     margin-left: auto; 
     margin-top: 10px;
     transition: transform 0.3s ease; 
+    @media (max-width:1200px) {
+      left: 17.7%; 
+    }
+    @media(max-width:500px){
+      left: 43%;
+    }
 }
 .toggle-image {
   height: 20px; 
@@ -699,10 +813,17 @@ body{
       justify-content: space-between;
       max-width: 1200px;
       margin: 0 auto;
+      @media(max-width:800px){
+        flex-wrap: wrap; 
+        justify-content: center;
+      }
     }
     .text, .form{
         width: 40%;
-    
+        @media(max-width:800px){
+          width: 80%;  
+          margin: 0 auto;
+        }
     }
     .text h2{
         font-size: 42px;
@@ -813,6 +934,9 @@ footer {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @media (max-width:500px) {
+    flex-direction: column;
+  }
 }
 
 .footer-item {
