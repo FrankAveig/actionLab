@@ -5,6 +5,7 @@ body {
   background-color: #F6F7FD;
   overflow-x: hidden;
   font-family: poppins, sans-serif;
+  z-index: 1;
 }
 
 .header {
@@ -520,7 +521,7 @@ body {
           filter: grayscale(100%);
 }
 
-.speaker-photo:hover {
+.speaker:hover .speaker-photo {
   -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
   -webkit-transform: scale(1.1);
@@ -536,6 +537,38 @@ body {
 .speaker p {
   font-size: 1em;
   color: #666666;
+}
+
+.degree {
+  display: block;
+  margin-top: 20px;
+  background-color: #FA3E5C; /* Color de fondo del botón */
+  color: #ffffff; /* Color del texto del botón */
+  border: none; /* No border */
+  border-radius: 4px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño del texto */
+  font-weight: bold; /* Grosor del texto */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  cursor: pointer; /* Cambiar el cursor a pointer */
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; /* Transición suave para el hover */
+  outline: none; /* Remover el outline al hacer foco */
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra ligera para darle profundidad */
+}
+
+/* Estilo para el hover del botón */
+.degree:hover {
+  background: #FA3E5C; /* Color de fondo del botón */
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada para el hover */
+}
+
+/* Estilo para cuando se hace foco en el botón */
+.degree:focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(235, 60, 139, 0.5);
+          box-shadow: 0 0 0 2px rgba(235, 60, 139, 0.5); /* Sombra de contorno para el foco */
 }
 
 .reasons2::after {
@@ -956,5 +989,112 @@ footer .footer-icon {
   100% {
     -webkit-transform: translateX(25%);
             transform: translateX(25%);
+  }
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.modal-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.modal-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+  background: linear-gradient(80deg, rgba(235, 60, 139, 0.5215686275) 25%, rgba(240, 99, 56, 0.5058823529) 50%, rgba(96, 191, 208, 0.431372549) 75%, rgba(63, 174, 168, 0.3843137255) 90%);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 40px;
+  border: none;
+  width: 50%;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  -webkit-animation-name: animatetop;
+          animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+.modal-content ul {
+  list-style: none; /* Removes default bullet points */
+  padding-left: 0; /* Adjusts padding */
+  text-align: left;
+}
+.modal-content ul li::before {
+  content: "•"; /* Adds custom bullet point */
+  color: #eb3c8b; /* Custom bullet point color */
+  font-weight: bold; /* Makes the bullet point bold */
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+.modal-content ul li {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #666;
+}
+
+.close-button {
+  color: #999;
+  float: right;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #333;
+  cursor: pointer;
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
   }
 }
