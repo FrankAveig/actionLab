@@ -457,7 +457,7 @@ body {
 }
 
 .keynote-speakers p {
-  margin-bottom: 40px;
+  margin-bottom: 14px;
   text-align: left;
 }
 
@@ -542,33 +542,31 @@ body {
 .degree {
   display: block;
   margin-top: 20px;
-  background-color: #FA3E5C; /* Color de fondo del botón */
-  color: #ffffff; /* Color del texto del botón */
-  border: none; /* No border */
-  border-radius: 4px; /* Bordes redondeados */
-  padding: 10px 20px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño del texto */
-  font-weight: bold; /* Grosor del texto */
-  text-transform: uppercase; /* Texto en mayúsculas */
-  cursor: pointer; /* Cambiar el cursor a pointer */
+  background-color: #FA3E5C;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
   -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease; /* Transición suave para el hover */
-  outline: none; /* Remover el outline al hacer foco */
+  transition: background-color 0.3s ease;
+  outline: none;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra ligera para darle profundidad */
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo para el hover del botón */
 .degree:hover {
-  background: #FA3E5C; /* Color de fondo del botón */
+  background: #FA3E5C;
   -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada para el hover */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo para cuando se hace foco en el botón */
 .degree:focus {
   -webkit-box-shadow: 0 0 0 2px rgba(235, 60, 139, 0.5);
-          box-shadow: 0 0 0 2px rgba(235, 60, 139, 0.5); /* Sombra de contorno para el foco */
+          box-shadow: 0 0 0 2px rgba(235, 60, 139, 0.5);
 }
 
 .reasons2::after {
@@ -605,6 +603,21 @@ body {
      }
    } */
 }
+.schedule .point1 {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 11%;
+  top: 8%;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #D9534F;
+  border: none;
+  width: 12px;
+  height: 12px;
+}
 .schedule .container__schedule {
   padding-left: 80px;
 }
@@ -621,7 +634,6 @@ body {
 .schedule .section-description {
   width: 100%;
   padding-bottom: 20px;
-  border-bottom: 2px solid #242732;
   margin-bottom: 40px;
 }
 .schedule .event-info.isActive {
@@ -654,6 +666,13 @@ body {
   border-left: 2px solid #d9534f;
   padding: 0px 20px 40px 40px;
 }
+.schedule .schedule-item:last-child .event-detail {
+  padding-bottom: 0;
+}
+.schedule .schedule-item:last-child .time .point1 {
+  top: unset;
+  bottom: -23%;
+}
 .schedule .event-name h3 {
   font-size: 18px;
   font-family: "Roboto", sans-serif;
@@ -672,11 +691,13 @@ body {
           align-items: center;
   margin-top: 10px;
 }
-.schedule .speaker-photo {
+.schedule .speaker-detail .speaker-photo {
   width: 150px; /* Ajusta según el diseño */
   height: 150px; /* Ajusta según el diseño */
   border-radius: 50%;
   margin-right: 10px;
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 .schedule .speaker-info {
   text-align: left;
@@ -1033,7 +1054,7 @@ footer .footer-icon {
 
 .modal-content {
   background-color: #fff;
-  margin: 10% auto;
+  margin: 20px auto;
   padding: 40px;
   border: none;
   width: 50%;
@@ -1048,6 +1069,7 @@ footer .footer-icon {
 .modal-content ul {
   list-style: none; /* Removes default bullet points */
   padding-left: 0; /* Adjusts padding */
+  margin-bottom: 0;
   text-align: left;
 }
 .modal-content ul li::before {
@@ -1063,6 +1085,9 @@ footer .footer-icon {
   font-size: 16px;
   color: #666;
 }
+.modal-content ul li:last-child {
+  margin-bottom: 0;
+}
 
 .close-button {
   color: #999;
@@ -1075,6 +1100,11 @@ footer .footer-icon {
 .close-button:focus {
   color: #333;
   cursor: pointer;
+}
+
+.next-button-active {
+  -webkit-animation: pulseAnimation 2s infinite;
+          animation: pulseAnimation 2s infinite;
 }
 
 @-webkit-keyframes animatetop {
@@ -1096,5 +1126,33 @@ footer .footer-icon {
   to {
     top: 0;
     opacity: 1;
+  }
+}
+@-webkit-keyframes pulseAnimation {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(217, 83, 79, 0.7);
+            box-shadow: 0 0 0 0px rgba(217, 83, 79, 0.7);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(217, 83, 79, 0);
+            box-shadow: 0 0 0 10px rgba(217, 83, 79, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0px rgba(217, 83, 79, 0);
+            box-shadow: 0 0 0 0px rgba(217, 83, 79, 0);
+  }
+}
+@keyframes pulseAnimation {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(217, 83, 79, 0.7);
+            box-shadow: 0 0 0 0px rgba(217, 83, 79, 0.7);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(217, 83, 79, 0);
+            box-shadow: 0 0 0 10px rgba(217, 83, 79, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0px rgba(217, 83, 79, 0);
+            box-shadow: 0 0 0 0px rgba(217, 83, 79, 0);
   }
 }
