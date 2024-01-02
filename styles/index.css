@@ -13,9 +13,13 @@ body {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  z-index: 999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 98%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -23,6 +27,8 @@ body {
   padding: 15px 20px;
   background: rgba(255, 255, 255, 0.103);
   border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .header figure {
   margin: 0;
@@ -61,8 +67,17 @@ body {
     padding: 15px 10px;
   }
   .header .header__navigation ul li {
-    font-size: 12px;
+    font-size: 10px;
   }
+}
+
+.header-scrolled {
+  background-color: #ffffff; /* Fondo blanco */
+  color: black; /* Texto negro */
+}
+
+.header-scrolled li {
+  color: #ff3a54 !important; /* Enlaces en negro */
 }
 
 .hero {

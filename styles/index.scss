@@ -11,12 +11,17 @@ body{
 }
 
 .header{
+    position: fixed;
+    top: 0;
+    z-index: 999;
     display: flex;
+    width: 98%;
     justify-content: space-between; 
     background-color: #ffffff6c;
     padding: 15px 20px; 
     background: rgba(255, 255, 255, 0.103);
-    border-bottom: 1px solid rgba(255,255,255,.13);;
+    border-bottom: 1px solid rgba(255,255,255,.13);
+    transition: all .3s ease-in-out;
     figure{
         margin: 0;
         width: 50px;
@@ -48,12 +53,22 @@ body{
       .header__navigation{
         ul{
           li{
-            font-size: 12px;
+            font-size: 10px;
           }
         }
       }
       
     }
+    
+}
+
+.header-scrolled {
+  background-color: #ffffff; /* Fondo blanco */
+  color: black; /* Texto negro */
+}
+
+.header-scrolled li  {
+  color: #ff3a54!important; /* Enlaces en negro */
 }
 
 .hero{
