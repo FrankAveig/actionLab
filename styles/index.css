@@ -1051,6 +1051,11 @@ body {
   z-index: 1;
   display: inline-block;
 }
+@media (max-width: 500px) {
+  .register .text h2 {
+    font-size: 24px;
+  }
+}
 .register .line {
   margin-bottom: 0;
 }
