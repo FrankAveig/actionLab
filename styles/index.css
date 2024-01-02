@@ -56,6 +56,14 @@ body {
   text-decoration: none;
   color: #fff;
 }
+@media (max-width: 500px) {
+  .header {
+    padding: 15px 10px;
+  }
+  .header .header__navigation ul li {
+    font-size: 12px;
+  }
+}
 
 .hero {
   position: absolute;
@@ -214,7 +222,7 @@ body {
 }
 @media (max-width: 800px) {
   .hero .hero__card_time {
-    bottom: -50px;
+    bottom: -100px;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
