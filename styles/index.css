@@ -1,6 +1,7 @@
 @charset "UTF-8";
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -67,16 +68,17 @@ body {
     padding: 15px 10px;
   }
   .header .header__navigation ul li {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
 .header-scrolled {
   background-color: #ffffff; /* Fondo blanco */
   color: black; /* Texto negro */
+  padding: 0px 20px;
 }
 
-.header-scrolled li {
+.header-scrolled li a {
   color: #ff3a54 !important; /* Enlaces en negro */
 }
 
@@ -589,7 +591,7 @@ body {
   top: -720px;
   background-image: url(../assets/images/backgrounds/home-corner-right.png);
   background-repeat: no-repeat;
-  width: 100%;
+  width: 54%;
   height: 725px;
   background-position: right top;
 }
@@ -708,7 +710,7 @@ body {
   bottom: 0;
   background-image: url(../assets/images/backgrounds/home-corner-right.png);
   background-repeat: no-repeat;
-  width: 100%;
+  width: 57%;
   height: 725px;
   background-position: right;
 }
@@ -1379,6 +1381,22 @@ footer .footer-icon {
 .next-button-active {
   -webkit-animation: pulseAnimation 2s infinite;
           animation: pulseAnimation 2s infinite;
+}
+
+.general-button {
+  text-decoration: none;
+  color: #fff;
+  background-color: #da1a5d;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-top: 20px;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
 }
 
 @-webkit-keyframes animatetop {
