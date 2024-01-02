@@ -75,7 +75,7 @@ body {
 .header-scrolled {
   background-color: #ffffff; /* Fondo blanco */
   color: black; /* Texto negro */
-  padding: 0px 20px;
+  padding: 0px 10px;
 }
 
 .header-scrolled li a {
@@ -364,6 +364,7 @@ body {
 }
 @media (max-width: 500px) {
   .main {
+    margin: 115vh auto 0 auto;
     padding: 0px;
   }
 }
