@@ -1149,9 +1149,7 @@ footer {
   overflow-y: scroll;
   @media (max-width:500px) {
     width: 70%;
-    ::-webkit-scrollbar {
-      width: 3px;
-    }
+
   }
   ul {
     list-style: none; 
