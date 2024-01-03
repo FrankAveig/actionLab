@@ -1097,7 +1097,7 @@ footer {
 .modal {
   display: none; 
   position: fixed; 
-  z-index: 2; 
+  z-index: 9999; 
   left: 0;
   top: 0;
   width: 100%;
@@ -1134,15 +1134,25 @@ footer {
 
 
 .modal-content {
+  position: relative;
+  z-index: 9999; 
   background-color: #fff;
-  margin: 20px auto; 
+  margin: 80px auto 20px auto; 
   padding: 40px;
   border: none;
+  height: 60%;
   width: 50%; 
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   animation-name: animatetop;
   animation-duration: 0.4s;
+  overflow-y: scroll;
+  @media (max-width:500px) {
+    width: 70%;
+    ::-webkit-scrollbar {
+      width: 3px;
+    }
+  }
   ul {
     list-style: none; 
     padding-left: 0; 
