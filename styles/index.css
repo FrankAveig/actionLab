@@ -253,6 +253,9 @@ body {
             flex-direction: column;
   }
 }
+.hero .hero__card_time a {
+  text-decoration: none;
+}
 .hero .hero__card_time .content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -273,7 +276,10 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 .hero .hero__card_time .countdown {

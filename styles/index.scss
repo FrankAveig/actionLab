@@ -204,6 +204,10 @@ body{
         @media (max-width: 500px) {
             flex-direction: column; 
         }
+        a{
+            text-decoration: none;
+            
+        }
         .content{
             display: flex;
             align-items: center;
@@ -218,7 +222,8 @@ body{
           .date{
             @media (max-width: 500px) {
               display: flex;
-              gap: 20px;
+              flex-direction: column;
+          
             }
           }
         .countdown{
