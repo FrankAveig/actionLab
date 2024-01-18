@@ -17,8 +17,32 @@ function showStep(stepNum) {
     currentIndicator.classList.add('active-step-indicator');
 }
 
+function showSummary() {
+    var birthdate = document.getElementById('birthdateInput').value;
+    var gender = document.getElementById('genderInput').value;
+    var phone = document.getElementById('phoneInput').value;
+    var entrepreneurshipTime = document.getElementById('entrepreneurshipTimeInput').value;
+    var difficultAspect = document.getElementById('difficultAspectInput').value;
+    var interestArea = document.getElementById('interestAreaInput').value;
+
+    var summaryHtml = `
+        <p><strong>Fecha de Nacimiento:</strong> ${birthdate}</p>
+        <p><strong>Género:</strong> ${gender}</p>
+        <p><strong>Teléfono:</strong> ${phone}</p>
+        <p><strong>Tiempo emprendiendo:</strong> ${entrepreneurshipTime}</p>
+        <p><strong>Aspecto difícil de emprender:</strong> ${difficultAspect}</p>
+        <p><strong>Área de interés:</strong> ${interestArea}</p>
+    `;
+
+    document.getElementById('summary').innerHTML = summaryHtml;
+    showStep(5);
+}
+
 function showNext(stepNum) {
     showStep(stepNum);
+    if(stepNum == 5) {
+    showSummary()
+    }
 }
 
 function showPrevious(stepNum) {

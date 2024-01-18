@@ -1,6 +1,17 @@
+
+var userData = {
+    user_id: 4, 
+    birthdate: "",
+    gender: "",
+    phone: "",
+    entrepreneurshipTime: "",
+    difficultAspect: "",
+    interestArea: ""
+};
+
 const authData = {
-    email: "oscar.romero.7@hotmail.com",
-    password: "Macorolo7"
+    email: "vetdayanita@gmail.com",
+    password: "Actionlab.1" 
 };
 
 const apiUrl = 'https://driedfruitsami.com/api-actionlab/public';
@@ -19,8 +30,10 @@ async function authenticate() {
         console.log(data)
         authToken = data.token;
 
-        let reservation = await fetchWithToken(`${apiUrl}/api/v1/user/client/reservations/user-reservation/3`, 'GET');
+        let reservation = await fetchWithToken(`${apiUrl}/api/v1/user/client/reservations/user-reservation/4`, 'GET');
         userReservation = reservation.data[0].id;
+
+
         console.log('Reservación del usuario:', userReservation)
     } catch (error) {
         console.error('Error en autenticación:', error);
@@ -46,15 +59,7 @@ async function fetchWithToken(url, method, body) {
     return await response.json();
 }
 
-var userData = {
-    user_id: 3, 
-    birthdate: "",
-    gender: "",
-    phone: "",
-    entrepreneurshipTime: "",
-    difficultAspect: "",
-    interestArea: ""
-};
+
 
 async function submitData() {
     try {
@@ -78,7 +83,7 @@ async function submitData() {
 
         async function sendAnswer(questionId, responseText) {
             return await fetchWithToken(`${apiUrl}/api/v1/user/client/answers`, 'POST', {
-                user_id: 3,
+                user_id: 4,
                 event_id: 2, 
                 question_id: questionId,
                 text_response: responseText

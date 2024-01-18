@@ -129,3 +129,8 @@ button:hover {
 .active-step-indicator {
     background-color: #ef6535; /* O cualquier otro color que prefieras */
 }
+
+h2{
+    font-size: 14px;
+    margin-bottom: 4px;
+}
