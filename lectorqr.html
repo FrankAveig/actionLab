@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lector de Código QR</title>
+    <!-- Enlace a la biblioteca jsQR a través de un CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.min.js"></script>
+    <style>
+        /* Estilos básicos */
+        #qr-video {
+            width: 100%;
+            height: auto;
+        }
+        #startButton {
+            margin-top: 10px;
+        }
+        #qr-result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lector de Código QR</h1>
+    <video id="qr-video"></video>
+    <button id="startButton">Iniciar Cámara</button>
+    <p id="qr-result">Resultado del QR: <span id="output"></span></p>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', () => {
+            const video = document.getElementById('qr-video');
+            const canvasElement = document.createElement('canvas');
+            const outputData = document.getElementById('output');
+
+            // Acceder a la cámara
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+                .then(function(stream) {
+                    video.srcObject = stream;
+                    video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+                    video.play();
+                    tick();
+                });
+
+            function tick() {
+                if (video.readyState === video.HAVE_ENOUGH_DATA) {
+                    canvasElement.height = video.videoHeight;
+                    canvasElement.width = video.videoWidth;
+                    const canvas = canvasElement.getContext('2d');
+                    canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+                    var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
+                    var code = jsQR(imageData.data, imageData.width, imageData.height, {
+                        inversionAttempts: "dontInvert",
+                    });
+                    if (code) {
+                        outputData.innerText = code.data;
+                    }
+                }
+                requestAnimationFrame(tick);
+            }
+        });
+    </script>
+</body>
+</html>
