@@ -6,7 +6,7 @@ const authData = {
 const apiUrl = 'https://driedfruitsami.com/api-actionlab/public';
 
 let authToken = '';
-
+let userReservation = '';
 async function authenticate() {
     try {
         let response = await fetch(`${apiUrl}/api/v1/user/auth/login`, {
@@ -18,6 +18,10 @@ async function authenticate() {
         let {data} = await response.json();
         console.log(data)
         authToken = data.token;
+
+        let reservation = await fetchWithToken(`${apiUrl}/api/v1/user/client/reservations/user-reservation/3`, 'GET');
+        userReservation = reservation.data[0].id;
+        console.log('Reservación del usuario:', userReservation)
     } catch (error) {
         console.error('Error en autenticación:', error);
     }
@@ -27,6 +31,8 @@ async function fetchWithToken(url, method, body) {
     if (!authToken) {
         throw new Error('No hay token de autenticación disponible');
     }
+
+
 
     let response = await fetch(url, {
         method: method,
@@ -88,8 +94,8 @@ async function submitData() {
         let answerData3 = await sendAnswer(3, userData.interestArea);
         console.log('Answer to question 3 submitted', answerData3);
 
-
-
+       let qr = await fetchWithToken(`${apiUrl}/api/v1/user/client/reservations/generate-qr/${userReservation}`, 'POST');
+        console.log('QR generado', qr);
     } catch (error) {
         console.error('Error:', error);
     }
