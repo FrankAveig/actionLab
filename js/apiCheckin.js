@@ -9,15 +9,20 @@ var userData = {
     interestArea: ""
 };
 
+// Datos de autenticación
 const authData = {
-    email: "vetdayanita@gmail.com",
+    email: "", // Este valor se actualizará si hay un email en la URL
     password: "Actionlab.1" 
 };
 
+// URL de la API
 const apiUrl = 'https://driedfruitsami.com/api-actionlab/public';
 
+// Token de autenticación y reserva del usuario
 let authToken = '';
 let userReservation = '';
+
+// Función para obtener el token
 async function authenticate() {
     try {
         let response = await fetch(`${apiUrl}/api/v1/user/auth/login`, {
@@ -27,35 +32,36 @@ async function authenticate() {
         });
 
         let {data} = await response.json();
-        console.log(data)
         authToken = data.token;
 
         let reservation = await fetchWithToken(`${apiUrl}/api/v1/user/client/reservations/user-reservation/4`, 'GET');
         userReservation = reservation.data[0].id;
-
-
-        console.log('Reservación del usuario:', userReservation)
     } catch (error) {
         console.error('Error en autenticación:', error);
     }
 }
 
-async function fetchWithToken(url, method, body) {
+// Función para hacer solicitudes con token
+async function fetchWithToken(url, method, body = null) {
     if (!authToken) {
         throw new Error('No hay token de autenticación disponible');
     }
 
+    let headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
+    };
 
-
-    let response = await fetch(url, {
+    let fetchOptions = {
         method: method,
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${authToken}`
-        },
-        body: JSON.stringify(body)
-    });
+        headers: headers
+    };
 
+    if (body) {
+        fetchOptions.body = JSON.stringify(body);
+    }
+
+    let response = await fetch(url, fetchOptions);
     return await response.json();
 }
 
@@ -106,6 +112,19 @@ async function submitData() {
     }
 }
 
-document.getElementById('submitBtn').addEventListener('click', submitData);
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
 
-window.addEventListener('load', authenticate);
+// Evento para cargar y autenticar
+window.addEventListener('load', () => {
+    const emailFromUrl = getQueryParam('email');
+    if (emailFromUrl) {
+        authData.email = emailFromUrl;
+    }
+    authenticate();
+});
+
+// Adjuntar la función submitData al botón de envío
+document.getElementById('submitBtn').addEventListener('click', submitData);
