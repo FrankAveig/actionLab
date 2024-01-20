@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step-by-Step Form</title>
+    <link rel="stylesheet" href="../styles/checkin.css">
+</head>
+<body>
+    <div class="hero__container">
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+    </div>
+<div class="form-wrapper">
+    <div class="steps-indicator">
+        <div class="step" id="step-indicator-1">1</div>
+        <div class="step" id="step-indicator-2">2</div>
+        <div class="step" id="step-indicator-3">3</div>
+        <div class="step" id="step-indicator-4">4</div>
+        <div class="step" id="step-indicator-5">5</div>
+    </div>
+    <div id="step-1" class="card step-card">
+        <h2>Fecha de Nacimiento</h2>
+        <input type="date" id="birthdateInput" placeholder="Fecha de Nacimiento">
+        <h2>Genero</h2>
+        <input type="text" id="genderInput" placeholder="Genero">
+        <h2>Teléfono</h2>
+        <input type="tel" id="phoneInput" placeholder="Teléfono">
+        <button type="button" onclick="showNext(2)">Siguiente</button>
+    </div>
+
+    <div id="step-2"  class="card step-card" >
+        <h2>¿Cuánto tiempo tienes emprendiendo?</h2>
+        <input id="entrepreneurshipTimeInput" type="text" placeholder="¿Cuánto tiempo tienes emprendiendo?">
+        <button type="button" onclick="showPrevious(1)">Anterior</button>
+        <button type="button" onclick="showNext(3)">Siguiente</button>
+    </div>
+
+    <div id="step-3" class="card step-card" >
+        <h2>¿Qué es lo más difícil de emprender para ti?</h2>
+        <input id="difficultAspectInput" type="text" placeholder="¿Qué es lo más difícil de emprender para ti?">
+        <button type="button" onclick="showPrevious(2)">Anterior</button>
+        <button type="button" onclick="showNext(4)">Siguiente</button>
+    </div>
+    <div id="step-4" class="card step-card" >
+        <h2>¿Cuál de las siguientes áreas es de tu interés?</h2>
+        <select id="topicSelect">
+            <option value="Finanzas">Finanzas</option>
+            <option value="Innovación">Innovación</option>
+            <option value="Liderazgo">Liderazgo</option>
+            <option value="Comunicación">Comunicación</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Recursos humanos">Recursos humanos</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Mentalidad">Mentalidad</option>
+        </select>
+        <button type="button" onclick="showPrevious(3)">Anterior</button>
+        <button type="button" onclick="showNext(5)">Siguiente</button>
+    </div>
+
+    <div id="step-5" class="card step-card" >
+        <h2></h2>
+        <p>Eviara los siguientes datos.</p>
+        <div id="summary"></div>
+        <button type="button" onclick="showPrevious(4)">Previous</button>
+        <button id="submitBtn" onclick="prueba()" type="submit">Enviar</button>
+    </div>
+</div>
+<div class="container__loader" id="loader">    
+    <div  class="loader"></div>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="../js/cardsCheckin.js"></script>
+<script src="../js/apiCheckinAdmin.js"></script>
+</body>
+</html>

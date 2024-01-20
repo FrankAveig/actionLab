@@ -21,7 +21,7 @@ const apiUrl = 'https://driedfruitsami.com/api-actionlab/public';
 // Token de autenticación y reserva del usuario
 let authToken = '';
 let userReservation = '';
-
+let adminToken = '';
 // Función para obtener el token
 async function authenticate() {
     try {
@@ -30,6 +30,20 @@ async function authenticate() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(authData)
         });
+
+        let responseAdmin = await fetch(`${apiUrl}/api/v1/user/auth/login`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: 'admin@admin.com',
+                password: 'admin'
+            })
+        });
+
+        let data2 = await responseAdmin.json();
+        console.log('Respuesta de autenticación:', data2.data);
+        adminToken = data2.data.token;
+
         let {data} = await response.json();
         console.log('Respuesta de autenticación:', data);
         authToken = data.token;
@@ -67,6 +81,28 @@ async function fetchWithToken(url, method, body = null) {
     return await response.json();
 }
 
+async function fetchWithTokenAdmin(url, method, body = null) {
+    if (!adminToken) {
+        throw new Error('No hay token de autenticación disponible');
+    }
+
+    let headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${adminToken}`
+    };
+
+    let fetchOptions = {
+        method: method,
+        headers: headers
+    };
+
+    if (body) {
+        fetchOptions.body = JSON.stringify(body);
+    }
+
+    let response = await fetch(url, fetchOptions);
+    return await response.json();
+}
 
 
 async function submitData() {
@@ -111,19 +147,19 @@ async function submitData() {
         let answerData3 = await sendAnswer(3, userData.interestArea);
         console.log('Answer to question 3 submitted', answerData3);
 
-       let qr = await fetchWithToken(`${apiUrl}/api/v1/user/client/reservations/generate-qr/${userReservation}`, 'POST');
-        console.log('QR generado', qr);
+       let asist = await fetchWithTokenAdmin(`https://driedfruitsami.com/api-actionlab/public/api/user/admin/reservations/validate-qr/${userReservation}`, 'POST');
+        console.log('QR generado', asist);
         document.getElementById('loader').style.display = 'none';
-
+       
         Swal.fire({
-            title: 'Check-in completo!',
-            text: 'Tu registro ha sido exitoso.',
-            icon: 'success',
+            title: `${asist.message == 'El emprendedor ya ingresó al evento' ? 'Advertencia' : 'Checkin Completo' }`,
+            text: `${asist.message}`,
+            icon: `${asist.message == 'El emprendedor ya ingresó al evento' ? 'warning' : 'success' }`,
             confirmButtonText: 'Ok'
         }).then((result) => {
             if (result.isConfirmed) {
                 // Redireccionar a www.actionlab.club
-                window.location.href = 'https://www.actionlab.club';
+                window.location.href = 'https://www.actionlab.club/event1/checkinadmin.html?email=';
             }
         });
     } catch (error) {
@@ -131,7 +167,7 @@ async function submitData() {
 
         Swal.fire({
             title: 'Check-in icompleto!',
-            text: 'Ocurrio un error vuelve a intentar.',
+            text: ` ${error.message == 'No hay token de autenticación disponible' ? 'Email Invalido' : error.message }`,
             icon: 'error',
             confirmButtonText: 'Ok'
         }).then((result) => {
