@@ -23,7 +23,7 @@ function showSummary() {
     var phone = document.getElementById('phoneInput').value;
     var entrepreneurshipTime = document.getElementById('entrepreneurshipTimeInput').value;
     var difficultAspect = document.getElementById('difficultAspectInput').value;
-    var interestArea = document.getElementById('interestAreaInput').value;
+    var interestArea = document.getElementById('topicSelect').value;
 
     var summaryHtml = `
         <p><strong>Fecha de Nacimiento:</strong> ${birthdate}</p>

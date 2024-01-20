@@ -1,6 +1,6 @@
 
 var userData = {
-    user_id: 4, 
+    user_id: '', 
     birthdate: "",
     gender: "",
     phone: "",
@@ -30,12 +30,14 @@ async function authenticate() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(authData)
         });
-
         let {data} = await response.json();
+        console.log('Respuesta de autenticación:', data);
         authToken = data.token;
+        userData.user_id = data.user.id;
 
-        let reservation = await fetchWithToken(`${apiUrl}/api/v1/user/client/reservations/user-reservation/4`, 'GET');
+        let reservation = await fetchWithToken(`${apiUrl}/api/v1/user/client/reservations/user-reservation/${userData.user_id}`, 'GET');
         userReservation = reservation.data[0].id;
+        console.log('Reserva del usuario:', reservation.data[0].user.id);
     } catch (error) {
         console.error('Error en autenticación:', error);
     }
@@ -68,13 +70,17 @@ async function fetchWithToken(url, method, body = null) {
 
 
 async function submitData() {
+    document.getElementById('loader').style.display = 'flex';
+
     try {
         userData.birthdate = document.getElementById('birthdateInput').value;
         userData.gender = document.getElementById('genderInput').value;
         userData.phone = document.getElementById('phoneInput').value;
         userData.entrepreneurshipTime = document.getElementById('entrepreneurshipTimeInput').value;
         userData.difficultAspect = document.getElementById('difficultAspectInput').value;
-        userData.interestArea = document.getElementById('interestAreaInput').value;
+        userData.interestArea = document.getElementById('topicSelect').value;
+        const button = document.getElementById('submitBtn');
+        button.disabled = true;
         if (!authToken) {
             await authenticate();
         }
@@ -89,7 +95,7 @@ async function submitData() {
 
         async function sendAnswer(questionId, responseText) {
             return await fetchWithToken(`${apiUrl}/api/v1/user/client/answers`, 'POST', {
-                user_id: 4,
+                user_id: userData.user_id,
                 event_id: 2, 
                 question_id: questionId,
                 text_response: responseText
@@ -107,7 +113,33 @@ async function submitData() {
 
        let qr = await fetchWithToken(`${apiUrl}/api/v1/user/client/reservations/generate-qr/${userReservation}`, 'POST');
         console.log('QR generado', qr);
+        document.getElementById('loader').style.display = 'none';
+
+        Swal.fire({
+            title: 'Check-in completo!',
+            text: 'Tu registro ha sido exitoso.',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redireccionar a www.actionlab.club
+                window.location.href = 'https://www.actionlab.club';
+            }
+        });
     } catch (error) {
+        document.getElementById('loader').style.display = 'none';
+
+        Swal.fire({
+            title: 'Check-in icompleto!',
+            text: 'Ocurrio un error vuelve a intentar.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const button = document.getElementById('submitBtn');
+                button.disabled = false;
+            }
+        });
         console.error('Error:', error);
     }
 }
