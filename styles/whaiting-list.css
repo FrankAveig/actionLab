@@ -1,0 +1,51 @@
+.form-wrapper{
+    width: 50%;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .form-wrapper{
+        width: 80%;
+    }
+    
+}
+
+body{
+    height: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    background-image: url('../assets/images/bootcamp.png')!important;
+    background-size: cover;
+    img{
+        width: 200px;
+        margin-top: 20px;
+        animation: infinite  3s zoomin-out;
+    }
+}
+
+.bg{height: 250vh;}
+
+.title{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color:#c93479 ;
+}
+
+@keyframes zoomin-out{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+

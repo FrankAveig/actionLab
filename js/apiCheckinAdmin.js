@@ -41,11 +41,11 @@ async function authenticate() {
         });
 
         let data2 = await responseAdmin.json();
-        console.log('Respuesta de autenticación:', data2.data);
+        /* console.log('Respuesta de autenticación:', data2.data); */
         adminToken = data2.data.token;
 
         let {data} = await response.json();
-        console.log('Respuesta de autenticación:', data);
+        console.log('Usuario:', data.user.id);
         authToken = data.token;
         userData.user_id = data.user.id;
 
