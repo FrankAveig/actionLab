@@ -158,6 +158,80 @@ overflow-x: hidden;
   color: rgba(0, 0, 0, 0.534);
 }
 
+.client-testimonials {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 50px 0;
+  width: 100%;
+}
+.testimonial-description{
+  max-width: 600px;
+  margin: auto;
+}
+
+.client-testimonials h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.client-testimonials .line {
+  height: 2px;
+  width: 60px;
+  background: #27AEA8;
+  margin: 20px auto;
+}
+
+.client-testimonials p {
+  color: #777;
+  font-size: 1em;
+  margin-bottom: 40px;
+}
+
+.testimonials-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  width: 300px;
+  margin: 20px;
+
+  padding: 20px;
+
+  border-radius: 10px;
+  position: relative;
+}
+
+.testimonial .testimonial-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.testimonial h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.present-button {
+  display: inline-block;
+  padding: 10px 30px;
+  background: #27AEA8;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.present-button:hover {
+  background: #27AEA8;
+}
+
 .keynote-speakers {
     text-align: center;
     padding: 100px ;
@@ -429,7 +503,7 @@ overflow-x: hidden;
     cursor: pointer;
   }
 .day{
-    background-color: #FFA500; 
+    background-color: #27AEA8; 
     width: 100%;
 }
   .countdown-container {
@@ -468,4 +542,49 @@ overflow-x: hidden;
   
   #reserve-button:hover {
     background-color: #333;
+  }
+
+  .contact{
+    h2{
+      font-size: 2.5rem;
+      color: #00000098 ;
+      font-weight: 700;
+      margin-bottom: 5px;
+      text-align: center;
+      margin: 40px;
+      padding-right: 34px;
+    }
+  }
+
+  @media (max-width:800px) {
+    .header .izq{
+      width: 80%;
+      margin:auto;
+
+      text-align: center;
+    }
+    .header .der img{
+      display: none;
+    }
+
+    .header svg{
+      z-index:2;
+     bottom: -12px;
+    }
+    .main img{
+      display:none;
+    }
+    .main .izq{
+      width: 100%;
+    }
+    .reasons .cards{
+      justify-content: center;
+    }
+    .reasons .cards .card{
+      width: 300px;
+    }
+    .topics__container{
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
   }
