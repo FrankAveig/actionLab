@@ -557,6 +557,11 @@ overflow-x: hidden;
   }
 
   @media (max-width:800px) {
+    .header .logo{
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     .header .izq{
       width: 80%;
       margin:auto;
@@ -582,6 +587,12 @@ overflow-x: hidden;
     }
     .reasons .cards .card{
       width: 300px;
+    }
+    .topics{
+      width: 90%;
+    }
+    .topics .izq img{
+      width: 100%;
     }
     .topics__container{
       flex-direction: column-reverse;
