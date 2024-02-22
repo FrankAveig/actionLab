@@ -1,0 +1,25 @@
+.header {
+  background-color: #CBABC8;
+}
+
+.main .izq p {
+  font-size: 1rem;
+}
+
+.reasons .cards {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.client-testimonials .line {
+  background-color: #CBABC8;
+}
+
+.present-button {
+  background-color: #CBABC8;
+}
+
+.day {
+  background-color: #CBABC8;
+}
