@@ -1,795 +1,223 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-  <meta charset="UTF-8">
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PKG4WW5D');</script>
-  <!-- End Google Tag Manager -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "layqhkmdts");
-</script>
-<!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '423327343391179');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=423327343391179&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-<meta name="facebook-domain-verification" content="7si7wu087f0pu6bi3wy426w2ovofcz" />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="../../styles/webinars/dinero-en-accion.css">
+    <link rel="stylesheet" href="../../styles/webinars/influencia-femenina.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,800&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-    <title>ActionLab</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <title>La influencia femenina en los negocios</title>
 </head>
+
 <body>
     <header class="header">
-        <figure>
-            <img src="./assets/images/logos/logo-al-small.png" alt="Logo">
-        </figure>
-        <nav class="header__navigation">
-            <ul>
-                <li><a href="#mentors">Mentores</a></li>
-                <li><a href="#schedule">Agenda</a></li>
-                <li><a href="#register">Aplica</a></li>
-                <li><a href="#sponsors">Patrocinadores</a></li>
-            </ul>
-        </nav>
+        <div id="particles-js" class="particles"></div>
+        <img  src="../../assets/images/logos/logo-complete-white.png" alt="" class="logo">
+        <div class="header__container">
+            <article class="izq">
+
+                <h1>La influencia femenina en los negocios:</h1>
+                <p>Si eres mujer, este webinar es
+                    para ti.<br>Y si eres hombre, este webinar
+                    también es para ti.
+                </p>
+                <p>
+
+                </p>
+            </article>
+            <article class="der">
+                <img data-aos="fade-up"
+                data-aos-duration="400" src="../../assets/images/webinars/influenciaFemenina/miscellaneous/1.png" alt="">
+            </article>
+        </div>
+        <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 170" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(255, 255, 255, 1)" offset="0%"></stop><stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,51L40,56.7C80,62,160,74,240,65.2C320,57,400,28,480,28.3C560,28,640,57,720,73.7C800,91,880,96,960,82.2C1040,68,1120,34,1200,31.2C1280,28,1360,57,1440,68C1520,79,1600,74,1680,85C1760,96,1840,125,1920,127.5C2000,130,2080,108,2160,104.8C2240,102,2320,119,2400,130.3C2480,142,2560,147,2640,124.7C2720,102,2800,51,2880,45.3C2960,40,3040,79,3120,90.7C3200,102,3280,85,3360,70.8C3440,57,3520,45,3600,34C3680,23,3760,11,3840,8.5C3920,6,4000,11,4080,17C4160,23,4240,28,4320,42.5C4400,57,4480,79,4560,87.8C4640,96,4720,91,4800,93.5C4880,96,4960,108,5040,116.2C5120,125,5200,130,5280,119C5360,108,5440,79,5520,70.8C5600,62,5680,74,5720,79.3L5760,85L5760,170L5720,170C5680,170,5600,170,5520,170C5440,170,5360,170,5280,170C5200,170,5120,170,5040,170C4960,170,4880,170,4800,170C4720,170,4640,170,4560,170C4480,170,4400,170,4320,170C4240,170,4160,170,4080,170C4000,170,3920,170,3840,170C3760,170,3680,170,3600,170C3520,170,3440,170,3360,170C3280,170,3200,170,3120,170C3040,170,2960,170,2880,170C2800,170,2720,170,2640,170C2560,170,2480,170,2400,170C2320,170,2240,170,2160,170C2080,170,2000,170,1920,170C1840,170,1760,170,1680,170C1600,170,1520,170,1440,170C1360,170,1280,170,1200,170C1120,170,1040,170,960,170C880,170,800,170,720,170C640,170,560,170,480,170C400,170,320,170,240,170C160,170,80,170,40,170L0,170Z"></path></svg>
+
     </header>
-    <section class="hero">
-        <div class="hero__global">
-            <div class="hero__content">
-                <h1>Diseña el éxito de tu negocio</h1>
-                <h2><span>6</span> Speakers</h2>
-                <p>Conoce las claves principales que necesitas aplicar para construir un negocio sólido,
-                    donde tus empleados amen trabajar, con productos y servicios únicos, que las personas
-                    amen comprar.</p>
-                    <h3>Aplica a una beca</h3>
-                    <a  href="#register">Aplica aquí</a>
-            </div>
-                <div class="hero__container">
-                    <div class="bg"></div>
-                    <div class="bg bg2"></div>
-                    <div class="bg bg3"></div>
-                </div>
-                
-                <!-- <div class="hero__card_time">
-                    <div class="date">
-                        <div class="content">
-                            <img src="./assets/images/icons/calendar.webp" alt="incono calendario">
-                            <p>20 de Enero del 2024</p> 
-                        </div>
-                        <a href="https://maps.app.goo.gl/5EoFmTxt44rpDCNq7" target="_blank">
-                          <div class="content">
-                            <img src="./assets/images/icons/location.webp" alt="icono direccion">
-                            <p>Auditorio de la Cámara de Comercio</p>
-                          </div>
-                        </a>
-                    </div>
-                    <div class="countdown ">
-                        <div class="countdown__item">
-                            <p>00</p>
-                            <span>Days</span>
-                        </div>
-                        <div class="countdown__item">
-                            <p>00</p>
-                            <span>Hours</span>
-                        </div>
-                        <div class="countdown__item">
-                            <p>00</p>
-                            <span>Minutes</span>
-                        </div>
-                        <div class="countdown__item">
-                            <p>00</p>
-                            <span>Seconds</span>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-    </section>
-
     <main class="main">
-        <section class="main__description">
-            <img src="./assets/images/miscellaneous/about.png" alt="">
-            <div class="text">
-                <h2>La Aventura Comienza Aquí: ¡Bienvenido a ActionLab!</h2>
-                <div class="line"></div>
-                <p class="firstText">Somos un equipo que busca convertirse en
-                    un socio en el viaje hacia tu éxito empresarial y personal..</p>
-                <p>Buscamos ser el impulso que necesitan los emprendedores
-                    para superar cualquier desafío, convertir sus sueños en
-                    logros tangibles y construir una vida y negocio con
-                    propósito, mediante experiencias educaticas en distintos
-                    formatos: eventos presenciales y online como conferencias,
-                    talleres, cursos y retiros.</p>
-           <!--      <div class="ca">
-                    <a href="#">
-                        Conoce más sobre nosotros
-                        <img src="./assets/images/icons/arrow_right.webp" alt="icono flecha">
-                    </a>
-                </div> -->
-            </div>
-
-        </section>
-        
+        <div class="izq"  data-aos="fade-right"  data-aos-duration="2000">
+            <h2>Quizá te este pasando lo siguiente:</h2>
+            <p>Hace rato que el mundo ya notó la importancia
+                femenina en los negocios y no es un secreto que
+                cada vez más, el protagonismo se centra en mujeres
+                líderes ¿por qué?<br><br>
+                Un estudio de 2016 encontró que las mujeres
+                obtienen puntajes más altos que los hombres en casi
+                todas las competencias de inteligencia emocional.
+                Estos incluyen cualidades como la gestión de
+                conflictos, la adaptabilidad y el trabajo en equipo,
+                que son esenciales para el liderazgo en un modelo
+                de negocio.
+                </p>
+            <a href="#" class="button"></a>
+        </div>
+        <img data-aos="fade-left"
+        data-aos-duration="2000" src="../../assets/images/webinars/influenciaFemenina/miscellaneous/3.png" alt="">
     </main>
     <section class="reasons">
-        <section class="event-section">
-            <div class="container">
-              <h2 class="section-title">Este evento es para ti si:</h2>
-              <ul class="criteria-list">
-                <li class="criteria-item">Tienes un emprendimiento funcionando.</li>
-                <hr class="separator">
-                <li class="criteria-item">Eres dueño/a de un negocio y estás a cargo de un equipo de trabajo.</li>
-                <hr class="separator">
-                <li class="criteria-item">No estás alcanzando las ventas que deseas en tu negocio.</li>
-                <hr class="separator">
-                <li class="criteria-item">Se te hace un desafío desempeñar el cargo de jefe en tu negocio.</li>
-                <hr class="separator">
-                <li class="criteria-item">No sabes cómo usar herramientas financieras para potenciar tu negocio.</li>
-                <hr class="separator">
-                <li class="criteria-item">Tienes una idea de negocio y quieres empezar a emprender.</li>
-              </ul>
+        <div class="reasons__container">
+
+
+            <h2>¿Por qué deberías asistir a este webinar?</h2>
+            <div class="cards">
+                <article class="card" data-aos="fade-down"  data-aos-duration="2000">
+                    <img src="../../assets/images/webinars/influenciaFemenina/icons/1.svg" alt="">
+                    <h3>Serás capaz de reconocer lo que le hace falta a tu negocio.</h3>
+                </article>
+                <article class="card"data-aos="fade-up"  data-aos-duration="2000" >
+                    <img src="../../assets/images/webinars/influenciaFemenina/icons/2.svg" alt="">
+                    <h3>Aprenderás las claves de un liderazgo positivo.</h3>
+                </article>
+                <article class="card" data-aos="fade-down"  data-aos-duration="2000">
+                    <img src="../../assets/images/webinars/influenciaFemenina/icons/3.svg" alt="">
+                    <h3>Entenderás cómo hacer que tu negocio y equipo crezcan contigo.</h3>
+                </article>
+                <article class="card" data-aos="fade-up"  data-aos-duration="2000">
+                    <img src="../../assets/images/webinars/influenciaFemenina/icons/4.svg" alt="">
+                    <h3>La importancia de la inteligencia emocional en el mundo laboral.</h3>
+                </article>
+                <article class="card" data-aos="fade-down"  data-aos-duration="2000">
+                    <img src="../../assets/images/webinars/influenciaFemenina/icons/5.svg" alt="">
+                    <h3>Sabrás cuales son las habilidades blandas más valoradas en el
+                        mundo empresaria</h3>
+                </article>
+             
             </div>
-            <a href="#register" class="general-button">Quiero aplicar </a>
-          </section>
+        </div>
+    </section>
+    <section class="topics">
+        <div class="topics__container">
+            <div class="izq" data-aos="fade-right"  data-aos-duration="2000">
+                <img src="../../assets/images/webinars/influenciaFemenina/miscellaneous/4.png" alt="">
+            </div>
+            <div class="der" data-aos="fade-left"  data-aos-duration="2000">
+                <h2>Esta Masterclass es para ti.</h2>
+                <p>Cada vez son más las mujeres que se unen al mundo de los negocios.
+                    Por eso, es necesario reconocer el impacto femenino en el desarrollo del
+                    entorno financiero y de la sociedad en general.
+                </p>
+                <p>
+                    Si eres de las personas que se siente estancada con su emprendimiento,
+                        negocio o equipo de trabajo, este webinar te dará las herramientas para
+                        iniciar una evaluación de todo eso que debes cambiar para mejorar.
+
+                </p>
+            </div>
+        </div>
     </section>
 
-    <section class="keynote-speakers" id="mentors">
-        <div class="container"> 
-          <h2>Conoce a tus Mentores</h2>
-          <div class="line"></div>
-          <p> Destacados expertos de diversas disciplinas para compartir sus valiosas perspectivas. Este encuentro único ofrece charlas de alto valor que iluminan distintos temas especializados.</p>
-          <div class="speakers-grid">
-            <div class="speaker">
-              <div class="speaker_img">
-                  <img src="./assets/images/speakers/diana.png" alt="Diana Aveiga" class="speaker-photo">
-              </div>
-              <h3>Diana Aveiga</h3>
-              <div class="line"></div>
-              <button class="degree" data-modal-target="#modalDiana">Me presento</button>
-          </div>
-          
-          <div class="modal" id="modalDiana">
-              <div class="modal-content">
-                  <span class="close-button">×</span>
-                  <div class="modal-header">
-                      <img src="./assets/images/speakers/diana.png" alt="Diana Aveiga" class="modal-photo">
-                      <h2>Diana Aveiga</h2>
-                  </div>
-                  <p>Soy una profesional altamente calificada en el mundo de los negocios y la innovación. A continuación, se destacan algunos aspectos claves de mi carrera:</p>
-                  <ul>
-                      <li>Poseo una sólida formación en agronegocios, con un enfoque en la sostenibilidad.</li>
-                      <li>Tengo experiencia como consultora con especialización en innovación y estrategias empresariales.</li>
-                      <li>Tengo una empresa que se centra en consultoría y estrategia de negocios.</li>
-                      <li>Como mentora en ESPAE Escuela de Negocios de la ESPOL, aplico mis conocimientos en la metodología de innovación Design Thinking.</li>
-                      <li>En FABRIMASA destaca mi versatilidad y competencia en áreas claves como procesos y marketing.</li>
-                  </ul>
-              </div>
-          </div>
-          
-            
-          <div class="speaker">
-            <div class="speaker_img">
-                <img src="./assets/images/speakers/carla.png" alt="Carla Cañarte" class="speaker-photo">
-            </div>
-            <h3>Carla Cañarte</h3>
+
+    <section class="client-testimonials" id="mentors">
+        <div class="container">
+            <h2>Conoce a tus Mentores</h2>
             <div class="line"></div>
-            <button class="degree" data-modal-target="#modalCarla">Me presento</button>
-        </div>
-        
-        <div class="modal" id="modalCarla">
-          <div class="modal-content">
-              <span class="close-button">×</span>
-              <div class="modal-header">
-                  <img src="./assets/images/speakers/carla.png" alt="Carla Cañarte" class="modal-photo">
-                  <h2>Carla Cañarte</h2>
-              </div>
-              <p>Soy comunicadora audiovisual con un profundo conocimiento en la producción y el storytelling. A continuación, se presentan algunos aspectos destacados de mi perfil profesional:</p>
-              <ul>
-                  <li>Experta en la creación de contenidos con impacto y relevancia.</li>
-                  <li>Formación especializada en la estructuración de narrativas para medios visuales.</li>
-                  <li>Asesora en medios digitales, ayudando a otros a contar historias que resuenan y enganchan.</li>
-                  <li>Innovadora en estrategias de marketing para la empresa BE, en el sector de tecnología y software.</li>
-              </ul>
-          </div>
-      </div>
-        
-            
-        <div class="speaker">
-          <div class="speaker_img">
-              <img src="./assets/images/speakers/eduardo.png" alt="Eduardo Espandre" class="speaker-photo">
-          </div>
-          <h3>Eduardo Spandre</h3>
-          <div class="line"></div>
-          <button class="degree" data-modal-target="#modalEduardo">Me presento</button>
-      </div>
-      
-      <div class="modal" id="modalEduardo">
-        <div class="modal-content">
-            <span class="close-button">×</span>
-            <div class="modal-header">
-                <img src="./assets/images/speakers/eduardo.png" alt="Eduardo Spandre" class="modal-photo">
-                <h2>Eduardo Spandre</h2>
-            </div>
-            <p>Ayudo a dueños de negocios a crecer su liderazgo emocional y a acelerar el crecimiento de sus negocios para que mejoren sus vidas haciendo lo que les apasiona desde su propósito.</p>
-            <ul>
-                <li>Soy coach científico y emocional enfocado en mejorar la eficacia y eficiencia de las personas para que tomen decisiones de forma óptima.</li>
-                <li>También soy coach de negocios fundacional y acelerador para emprendedores para que lancen, crezcan y escalen sus negocios.</li>
-                <li>Practico Chikun para balancear la energía y las emociones de mis clientes en coaching.</li>
-                <li>Tengo 12 años de experiencia en industrias de alimentos y cuidado personal como controlador y en mejora continua. </li>
-            </ul>
-        </div>
-    </div>
-            
-      <div class="speaker">
-        <div class="speaker_img">
-            <img src="./assets/images/speakers/elsa.png" alt="Elsa Santelices" class="speaker-photo">
-        </div>
-        <h3>Elsa Santelices</h3>
-        <div class="line"></div>
-        <button class="degree" data-modal-target="#modalElsa">Me presento</button>
-    </div>
-    
-    <div class="modal" id="modalElsa">
-      <div class="modal-content">
-          <span class="close-button">×</span>
-          <div class="modal-header">
-              <img src="./assets/images/speakers/elsa.png" alt="Elsa Santelices" class="modal-photo">
-              <h2>Elsa Santelices</h2>
-          </div>
-          <p>Tengo amplia experiencia en el mundo de los negocios y el liderazgo, con un enfoque especial en la formación y el coaching empresarial. A continuación, se detallan aspectos destacados de mi carrera:</p>
-          <ul>
-              <li>Con una sólida base académica para liderar en el ámbito empresarial.</li>
-              <li>Experta en dirigir a empresarios y equipos hacia el éxito y la eficiencia.</li>
-              <li>Parte del Maxwell Leadership, con un enfoque en desarrollo profesional y liderazgo.</li>
-              <li>Más de 15 años liderando equipos y proyectos en empresas nacionales y multinacionales.</li>
-          </ul>
-      </div>
-  </div>
-            
-    <div class="speaker">
-      <div class="speaker_img">
-          <img src="./assets/images/speakers/jhony.png" alt="Johnny Escobar" class="speaker-photo">
-      </div>
-      <h3>Johnny Escobar</h3>
-      <div class="line"></div>
-      <button class="degree" data-modal-target="#modalJohnny">Me presento</button>
-  </div>
-  
-  <div class="modal" id="modalJohnny">
+            <p class="testimonial-description">Destacadas
+                expertas para
+                compartir sus
+                valiosas
+                perspectivas.
+                Este encuentro
+                único ofrece
+                charlas de alto
+                valor .</p>
+            <div class="testimonials-grid">
+                <div class="testimonial"  data-aos="fade-right"  data-aos-duration="2000">
+                    <div class="testimonial_img">
+                        <img src="../../assets/images/speakers/who.png" alt="Eliana Salas" class="testimonial-photo">
+                    </div>
+                    <h3>Eliana Salas</h3>
+                    <div class="line"></div>
+                    <button class="present-button" data-modal-target="#modalEliana">Me presento</button>
+                </div>
+
+               
+<div class="modal" id="modalEliana">
     <div class="modal-content">
         <span class="close-button">×</span>
         <div class="modal-header">
-            <img src="./assets/images/speakers/jhony.png" alt="Johnny Escobar" class="modal-photo">
-            <h2>Johnny Escobar</h2>
+            <img src="../../assets/images/speakers/who.png" alt="Eliana Salas" class="modal-photo">
+            <h2>Eliana Salas</h2>
         </div>
-        <p>Soy experto en el ámbito financiero, con una perspectiva estratégica y práctica para el manejo de finanzas en el sector empresarial. He aquí algunos puntos claves de mi perfil:</p>
+        <p>Soy una experta en recursos humanos y desarrollo de talento con una trayectoria importante en el mundo corporativo. Aquí están algunos de los aspectos más destacados de mi perfil profesional:</p>
         <ul>
-            <li>Poseo una combinación de habilidades en comercio y marketing.</li>
-            <li>Profundizo en el análisis y la gestión de datos para la toma de decisiones estratégicas.</li>
-            <li>Equipado con técnicas y herramientas para liderar proyectos complejos con eficiencia.</li>
-            <li>Más de 9 años de experiencia, ofreciendo ahora mi conocimiento como consultor independiente y emprendedor.</li>
+            <li>Comparto mi conocimiento a través de diversas plataformas digitales.</li>
+            <li>Cuento con una especialización en liderar y gestionar equipos.</li>
+            <li>Combino las últimas tendencias en gestión con habilidades interpersonales.</li>
+            <li>Más de 10 años de experiencia trabajando en áreas de Talento Humano para Latinoamérica.</li>
         </ul>
     </div>
-</div>
-            
-  <div class="speaker">
-    <div class="speaker_img">
-        <img src="./assets/images/speakers/who.png" alt="Eliana Salas" class="speaker-photo">
-    </div>
-    <h3>Eliana Salas</h3>
-    <div class="line"></div>
-    <button class="degree" data-modal-target="#modalEliana">Me presento</button>
-</div>
-
-<div class="modal" id="modalEliana">
-  <div class="modal-content">
-      <span class="close-button">×</span>
-      <div class="modal-header">
-          <img src="./assets/images/speakers/who.png" alt="Eliana Salas" class="modal-photo">
-          <h2>Eliana Salas</h2>
-      </div>
-      <p>Soy una experta en recursos humanos y desarrollo de talento con una trayectoria importante en el mundo corporativo. Aquí están algunos de los aspectos más destacados de mi perfil profesional:</p>
-      <ul>
-          <li>Comparto mi conocimiento a través de diversas plataformas digitales.</li>
-          <li>Cuento con una especialización en liderar y gestionar equipos.</li>
-          <li>Combino las últimas tendencias en gestión con habilidades interpersonales.</li>
-          <li>Más de 10 años de experiencia trabajando en áreas de Talento Humano para Latinoamérica.</li>
-      </ul>
   </div>
-</div>
-            
-            
-  
-          </div>
-        </div>
-      </section>
+                <div class="testimonial"  data-aos="fade-left"  data-aos-duration="2000">
+                    <div class="testimonial_img">
+                        <img src="../../assets/images/speakers/elsa.png" alt="Elsa Santelices" class="testimonial-photo">
+                    </div>
+                    <h3>Elsa Santelices</h3>
+                    <div class="line"></div>
+                    <button class="present-button" data-modal-target="#modalElsa">Me presento</button>
+                </div>
 
-      <section class="reasons reasons2">
-        <section class="event-section">
-            <div class="container">
-              <h2 class="section-title">Al final del evento estarás listo/a para:</h2>
-              <ul class="criteria-list">
-                <li class="criteria-item">Diseñar correctamente un producto y servicio con un propósito claro de venta y aporte a la sociedad.</li>
-                <hr class="separator">
-                <li class="criteria-item">Sabrás cómo aplicar herramientas financieras de forma inteligente y a tu favor para invertir y potenciar tu negocio.</li>
-                <hr class="separator">
-                <li class="criteria-item">Conocerás las claves de liderazgo que te permitirán delegar funciones y convertirte en un jefe real que se enfoca en el crecimiento de su negocio.</li>
-                <hr class="separator">
-                <li class="criteria-item">Tendrás herramientas prácticas de comunicación que te ayudarán a mantener un buen ambiente laboral y a concretar ventas con tus clientes.</li>
-                <hr class="separator">
-                <li class="criteria-item">Serás consciente sobre cómo actuar correctamente con una mentalidad de empresario.</li>
-                
-              </ul>
+                <div class="modal" id="modalElsa">
+                    <div class="modal-content">
+                        <span class="close-button">×</span>
+                        <div class="modal-header">
+                            <img src="../../assets/images/speakers/elsa.png" alt="Elsa Santelices" class="modal-photo">
+                            <h2>Elsa Santelices</h2>
+                        </div>
+                        <p>Tengo amplia experiencia en el mundo de los negocios y el liderazgo, con un enfoque especial en la formación y el coaching empresarial. A continuación, se detallan aspectos destacados de mi carrera:</p>
+                        <ul>
+                            <li>Con una sólida base académica para liderar en el ámbito empresarial.</li>
+                            <li>Experta en dirigir a empresarios y equipos hacia el éxito y la eficiencia.</li>
+                            <li>Parte del Maxwell Leadership, con un enfoque en desarrollo profesional y liderazgo.</li>
+                            <li>Más de 15 años liderando equipos y proyectos en empresas nacionales y multinacionales.</li>
+                        </ul>
+                    </div>
+                </div>
+
+             
+
+
             </div>
-            <a href="#register" class="general-button">Quiero aplicar </a>
-
-          </section>
+        </div>
     </section>
-
-    <section class="schedule" id="schedule">
-
-        <div class="container">
-          <h2 class="section-title">Agenda</h2>
-          <div class="line"></div>
-          <p class="section-description">
-            Descubre el itinerario de charlas y horarios, sumérgete en conocimientos especializados y conecta con innovaciones y estrategias claves en cada sesión.</p>
+    <section class="day">
+        <div class="countdown-container">
+            <h2>No te quedes fuera</h2>
+            <p class="event-date">19 de Marzo, 8 pm</p>
+            <div id="countdown">
+                <span id="days"></span> días
+                <span id="hours"></span> horas
+                <span id="minutes"></span> minutos
+                <span id="seconds"></span> segundos
+            </div>
+        </div> 
+    </section>
+    <div class="contact" style="width: 60%;">
+        <h2>Regístrate</h2>
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+        <script>
+          hbspt.forms.create({
+            region: "na1",
+            portalId: "44793314",
+            formId: "7b3e5b36-7f45-4394-aadc-b355535a8585"
+          });
+        </script>
         </div>
-        <div class="container container__schedule">
-
-          <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">14:30 - 15:00</span> 
-            </div>
-            <div class="event-detail">
-              <div class="point1"></div>
-              <div class="event-name">
-                <h3>Registro de asistentes.</h3>
-                <span class="start-time start-time2">14:30 - 15:00</span> 
-
-              </div>
-            </div>
-          </div>
-
-          <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">15:00 - 15:15</span> 
-              
-            </div>
-            <div class="event-detail">
-              <div class="point1"></div>
-              <div class="event-name">
-                <h3>Bienvenida al evento.</h3>
-                <span class="start-time start-time2">15:00 - 15:15</span> 
-
-              </div>
-            </div>
-          </div>
-
-
-          <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">15:15 - 15:30</span> 
-
-            </div>
-                        <button class="toggle-button">
-              <img src="./assets/images/icons/down.webp" alt="Expandir" class="toggle-image">
-          </button>
-
-            <div class="event-detail">
-              <div class="event-name">
-                <h3>Sé tu héroe financiero</h3>
-                <span class="start-time start-time2">15:15 - 15:30</span> 
-                <p class="speaker-name">Johnny Gonzalo Escobar Macías</p>
-
-              </div>
-              <div class="event-info ">
-                  <div class="speaker-detail">
-                      <img src="./assets/images/speakers/jhony.png" alt="Diana" class="speaker-photo">
-                      <div class="speaker-info">
-                          <p class="speaker-bio">Johnny Gonzalo Escobar Macías, en su charla 
-                            "Sé un héroe Financiero", aborda temas clave sobre finanzas personales 
-                            y empresariales. Explica los diferentes tipos de créditos, tasas y productos 
-                            financieros de inversión, ofreciendo un entendimiento claro del mercado 
-                            financiero. Además, detalla cómo mejorar la calificación crediticia y 
-                            gestionar eficazmente las deudas. Cierra con estrategias prácticas para 
-                            aprovechar los servicios bancarios, enfocándose en el crecimiento empresarial 
-                            y el manejo financiero inteligente.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-
-          <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">15:30 - 15:45</span> 
-
-            </div>
-            <button class="toggle-button">
-              <img src="./assets/images/icons/down.webp" alt="Expandir" class="toggle-image">
-          </button>
-
-            <div class="event-detail">
-              <div class="event-name">
-                <h3>Tips de un buen empleador.</h3>
-                <span class="start-time start-time2">15:30 - 15:45</span> 
-
-                <p class="speaker-name">Eliana Salas Hernandez</p>
-
-              </div>
-              <div class="event-info">
-                  <div class="speaker-detail">
-                      <img src="./assets/images/speakers/who.png" alt="Diana" class="speaker-photo">
-                      <div class="speaker-info">
-                          <p class="speaker-bio">Eliana Salas Hernández ofrece en su charla 
-                            "Cómo ser un buen empleador" consejos esenciales sobre la gestión 
-                            efectiva del talento en los negocios. Destaca la importancia de 
-                            cuidar el talento para el crecimiento empresarial y profundiza en el 
-                            ciclo de experiencia del empleado. Además, comparte estrategias de 
-                            gestión de talento utilizadas por grandes empresas, adaptadas para 
-                            negocios más pequeños. Finalmente, proporciona tips prácticos para ser un 
-                            buen empleador, enfocándose en crear un ambiente de trabajo positivo y 
-                            motivador.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        
-
+        <script src="
+        https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js
+        "></script>
+        <script src="../../js/webinars/waves.js"></script>
     
-
-
-          <div class="schedule-item">
-            <div class="time">
-              <span class="start-time"> 15:45 - 16:00</span> 
-
-            </div>
-                        <button class="toggle-button">
-              <img src="./assets/images/icons/down.webp" alt="Expandir" class="toggle-image">
-          </button>
-
-            <div class="event-detail">
-              <div class="event-name">
-                <h3>Habilidades de Liderazgo para Emprendedores</h3>
-                <span class="start-time start-time2"> 15:45 - 16:00</span> 
-
-                <p class="speaker-name">Elsa Angélica Santelices Bahamonde</p>
-
-              </div>
-              <div class="event-info">
-                  <div class="speaker-detail">
-                      <img src="./assets/images/speakers/elsa.png" alt="Diana" class="speaker-photo">
-                      <div class="speaker-info">
-                          <p class="speaker-bio">En su presentación "Habilidades de Liderazgo para Emprendedores",
-                            Elsa Angélica Santelices Bahamonde enfoca en la crucial importancia de desarrollar 
-                            habilidades de liderazgo para el éxito emprendedor. Explica cómo la habilidad de delegar 
-                            es fundamental para el crecimiento del emprendimiento, y ofrece un paso a paso detallado 
-                            para delegar eficazmente, permitiendo así la multiplicación de esfuerzos y recursos. 
-                            Elsa concluye con recomendaciones prácticas para una delegación exitosa, subrayando 
-                            cómo estas habilidades son esenciales para un liderazgo efectivo y el crecimiento del negocio.</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-
-          <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">16:00 - 16:15</span> 
-            </div>
-            <div class="event-detail">
-              <div class="point1"></div>
-              <div class="event-name">
-                <h3>Receso</h3>
-                <span class="start-time start-time2">16:00 - 16:15</span> 
-
-              </div>
-            </div>
-          </div>
-        
-
-            
-          <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">16:15 - 16:30</span> 
-
-            </div>
-                        <button class="toggle-button">
-              <img src="./assets/images/icons/down.webp" alt="Expandir" class="toggle-image">
-          </button>
-
-            <div class="event-detail">
-              <div class="event-name">
-                <h3>Innova para ganar</h3>
-                <span class="start-time start-time2">16:15 - 16:30</span> 
-
-                <p class="speaker-name">Diana Aveiga Dueñas</p>
-
-              </div>
-              <div class="event-info">
-                  <div class="speaker-detail">
-                      <img src="./assets/images/speakers/diana.png" alt="Diana" class="speaker-photo">
-                      <div class="speaker-info">
-                          <p class="speaker-bio">Diana Elizabeth Aveiga Dueñas, en su presentación "Innova para ganar",
-                            subraya la importancia de desarrollar productos y servicios centrados en los usuarios.
-                            Profundiza en la metodología de innovación Design Thinking, explicando cómo se puede
-                            aplicar para productos y servicios. A través de un ejemplo práctico, muestra cómo un 
-                            producto puede evolucionar a través del proceso de Design Thinking. Además, 
-                            Diana aborda cómo el ego puede ser un obstáculo en la innovación y resalta la 
-                            importancia de ser consciente de los sesgos al diseñar productos o servicios.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        
-          
-
-         
-        
-          
-
-          <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">16:30 - 16:45</span> 
-
-            </div>
-                        <button class="toggle-button">
-              <img src="./assets/images/icons/down.webp" alt="Expandir" class="toggle-image">
-          </button>
-
-            <div class="event-detail">
-              <div class="event-name">
-                <h3>Cómo afrontar conversaciones difíciles</h3>
-                <span class="start-time start-time2">16:30 - 16:45</span> 
-
-                <p class="speaker-name">Carla Cañarte Medina</p>
-
-              </div>
-              <div class="event-info">
-                  <div class="speaker-detail">
-                      <img src="./assets/images/speakers/carla.png" alt="Diana" class="speaker-photo">
-                      <div class="speaker-info">
-                          <p class="speaker-bio">En su charla, Carla Cañarte Medina aborda el tema de manejar conversaciones difíciles en el entorno de negocios, destacando que un buen ambiente laboral comienza con una comunicación efectiva. Enfatiza la importancia de centrarse en los hechos en lugar de en las personas para resolver conflictos. Además, ofrece preguntas clave para facilitar la resolución de estos y comparte técnicas de persuasión que son útiles para mejorar las ventas y la comunicación general en el ámbito laboral.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        
-          
- 
-         
-          
-
-          <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">16:45 - 17:00</span> 
-
-            </div>
-                        <button class="toggle-button">
-              <img src="./assets/images/icons/down.webp" alt="Expandir" class="toggle-image">
-          </button>
-
-            <div class="event-detail">
-              <div class="event-name">
-                <h3>La Mentalidad del Emprendedor</h3>
-                <span class="start-time start-time2">16:45 - 17:00</span> 
-
-                <p class="speaker-name">Eduardo José Spandre Zelaya</p>
-
-              </div>
-              <div class="event-info">
-                  <div class="speaker-detail">
-                      <img src="./assets/images/speakers/eduardo.png" alt="Diana" class="speaker-photo">
-                      <div class="speaker-info">
-                          <p class="speaker-bio">En "La Mentalidad del Emprendedor", Eduardo José Spandre Zelaya 
-                            discute cómo activar el potencial emprendedor interno. Destaca el incidente inductor
-                            como catalizador para despertar la confianza, y la importancia de reconocer dones y 
-                            talentos únicos. Eduardo aborda el uso del propósito de vida como motor de éxito y 
-                            ofrece estrategias para superar limitaciones personales y profesionales. Finaliza 
-                            con una metodología para desarrollar negocios basados en la pasión, enfocada en el crecimiento 
-                            y la escalabilidad.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        
-          
-
-          <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">17:00 - 18:00</span> 
-            </div>
-            <div class="event-detail">
-              <div class="point1"></div>
-              <div class="event-name">
-                <h3>Networking Break.</h3>
-                <span class="start-time start-time2">17:00 - 18:00</span> 
-
-              </div>
-            </div>
-          </div>
-          
-
- 
-        </div>
-      </section>
-      
-      <section class="register" id="register">
-        <div class="container">
-          
- 
-          <div class="text">
-            <h2>¿Estás listo para unirte a nosotros?</h2>
-            <div class="line"></div>
-            <p class="first-text">Regístrate ahora y asegura tu lugar en este evento único.</p>
-            <p>Registra tus datos ahora y aplica a una beca del 100%
-              Se trata de un evento exclusivo para profesionales. Rellene el formulario en línea para registrar su interés y recibirá un correo electrónico con todos los detalles.</p>
-          </div>
-       <!--    <form action="" class="form">
-            
-            <div class="row row2">
-              <input type="text" placeholder="Nombre">
-              <input type="email" placeholder="Email">
-            </div>
-            <div class="row row2">
-              <select name="" id="">
-                <option value="" selected disabled>Soy</option>
-                <option value="">Quiero emprender</option>
-                <option value="">Emprendedor</option>
-                <option value="">Dueño de negocio</option>
-                <option value="">Otro</option>
-              </select>
-              <select name="" id="">
-                <option value="" selected disabled>Mi equipo</option>
-                <option value="">Solo yo</option>
-                <option value=""> 2 - 5</option>
-                <option value=""> 6 - 10 </option>
-                <option value=""> + 10 </option>
-              </select>
-            </div>
-            <div class="row row2">
-              <input type="text" placeholder="Teléfono">
-              <input type="text" placeholder="Ciudad">
-            </div>
-            <div class="row row2">
-              <select name="" id="">
-                <option value="" selected disabled>¿Cómo nos conociste?</option>
-                <option value="">Invitación</option>
-                <option value="">Redes sociales</option>
-                <option value="">Google</option>
-                <option value="">Otro</option>
-              </select>
-            </div>
-            <button class="cta">Registrarse</button>
-
-          </form> -->
-
-          <!-- <script>
-            hbspt.forms.create({
-                region: "na1",
-                portalId: "44793314",
-                formId: "abc5b829-f273-4642-8ad9-f92e0849a78a"
-            });
-        </script> -->
-        </div>
-      </section>
-
-      <section class="sponsors" id="sponsors">
-        <div class="container">
-          <h2 class="section-title">Patrocinadores</h2>
-          <div class="line"></div>
-          <p class="section-description">Conoce a las empresas que hacen posible este evento.</p>
-          <div class="sponsors-grid">
-            <div class="sponsor">
-              <img src="./assets/images/sponsors/logo-event-1.png" alt="sponsor" class="sponsor-logo">
-            </div>
-            <div class="sponsor">
-              <img src="./assets/images/sponsors/logo-event-2.png" alt="sponsor" class="sponsor-logo">
-            </div>
-            <div class="sponsor">
-              <img src="./assets/images/sponsors/logo-event-3.jpg" alt="sponsor" class="sponsor-logo">
-            </div>
-           
-          
-          </div>
-        </div>
-      </section>
-      <footer>
-        <div class="container">
-          <div class="footer-content">
-            <div class="footer-item">
-              <img src="./assets/images/logos/logo-complete-white.png" alt="logo" class="footer-logo">
-              <p class="footer-text">Somos un equipo que busca convertirse en un socio en el viaje hacia tu éxito empresarial y personal.</p>
-              <div class="footer-social">
-                
-                <a href="https://www.instagram.com/actionlab.club/" target="_blank" class="social-link">
-                  <img src="./assets/images/icons/instagram.webp" alt="instagram" class="social-icon">
-                </a>
-                <a href="https://www.linkedin.com/company/actionlabclub/" target="_blank" class="social-link">
-                  <img src="./assets/images/icons/linkedin.webp" alt="linkedin" class="social-icon">
-                </a>
-              </div>
-            </div>
-            <div class="footer-item">
-              <h3 class="footer-title">Enlaces</h3>
-              <ul class="footer-list">
-                <li class="footer-list-item">
-                  <a href="#mentors" class="footer-link">Mentores</a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="#schedule" class="footer-link">Agenda</a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="#register" class="footer-link">Aplica</a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="#sponsors" class="footer-link">Patrocinadores</a>
-                </li>
-              </ul>
-            </div>
-            <div class="footer-item">
-              <h3 class="footer-title">Contacto</h3>
-              <ul class="footer-list">
-                <li class="footer-list-item">
-                  <a href="https://wa.link/f69cw0" target="_blank" class="footer-link">
-                    <img src="./assets/images/icons/whatsapp.webp" alt="whatsapp" class="footer-icon">
-                    +593 99 6403 4840
-                  </a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="https://www.instagram.com/actionlab.club/" target="_blank" class="footer-link">
-                    <img src="./assets/images/icons/instagram.webp" alt="instagram" class="footer-icon">
-                    @actionlab
-                  </a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="https://www.linkedin.com/company/actionlabclub/" target="_blank" class="footer-link">
-                    <img src="./assets/images/icons/linkedin.webp" alt="linkedin" class="footer-icon">
-                    ActionLab
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-
-      </footer>
-    <script src="./js/menu.js"></script>
-    <script src="./js/modal.js"></script>
-    <script src="./js/schedule.js"></script>
-    <script src="./js/countdown.js"></script>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKG4WW5D"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/webinars/influenciaFemenina/particles.js"></script>
+    <script src="../../js/webinars/influenciaFemenina/contdown.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
+
 </html>
