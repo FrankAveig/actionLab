@@ -13,6 +13,8 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #343b46;
+  width: 100vw;
+  position: relative;
 }
 
 header {
@@ -39,6 +41,7 @@ header figure img {
 }
 
 .hero {
+  overflow-x: hidden;
   width: 100vw;
   height: 100vh;
 }
@@ -521,7 +524,18 @@ header figure img {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .hero figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100vw;
     overflow-x: hidden;
+  }
+  .hero figure img {
+    width: auto;
+    position: relative;
   }
   .hero img {
     width: auto;
