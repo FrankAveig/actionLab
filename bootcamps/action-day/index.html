@@ -187,15 +187,20 @@
             <div class="pay-buttons">
                 <div class="container">
                 <h2>COMPRAR <span class="general">ENTRADA GENERAL ($147)</span></h2>
+                <h3>Recuerda enviarnos tu nombre <br>cédula y una foto del recibo a <br><span>info@actionlab.club o 098065907</span></h3>
                 <div class="buttons">
                     <a href="https://payp.page.link/Vn8G" class="btn">PAGAR CON PAYPHONE</a>
                     <a href="https://www.paypal.com/ncp/payment/YWCNNUZFNJHT8" class="btn">PAGAR CON PAYPAL</a>
+                    <div id="paypal-button-container"></div>
+                 
                 </div>
             </div>
         </div>
         <div class="pay-buttons">
             <div class="container">
                 <h2>COMPRAR <span class="vip">ENTRADA VIP ($167)</span></h2>
+                <h3>Recuerda enviarnos tu nombre <br>cédula y una foto del recibo a <br>info@actionlab.club o 098065907</h3>
+        
                 <div class="buttons">
                     <a href="https://payp.page.link/yf7S" class="btn">PAGAR CON PAYPHONE</a>
                     <a href="https://www.paypal.com/ncp/payment/V8QSADP59Q9W8" class="btn">PAGAR CON PAYPAL</a>
@@ -207,5 +212,57 @@
         <h3 class="transfer-sub">Te compartimos los datos de la misma, <span>envía tu comprobante de pago a info@actionlab.club</span></h3>
         <img class="transferImg" src="../../assets/images/Bootcamp/action-day/transfer.png" alt="">
     </section>
+<script src="https://www.paypal.com/sdk/js?client-id=AZDdlO1sk1xYrUuVgUCk20zmib9zcF1W0KutgnQlMSkrjg5Kn-VZJqVVrLA9dYnSeIGSQIDczc53_GOD&components=buttons&currency=USD&locale=es_EC"></script>
+   
+
+    <script>
+        paypal.Buttons({
+            style: {
+              layout: 'vertical',
+              color:  'blue',
+              shape:  'rect',
+              label:  'paypal'
+            },
+        
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '3.00'
+                        }
+                    }],
+                    application_context: {
+                        shipping_preference: 'NO_SHIPPING' // Indica que no se requiere dirección de envío
+                    }
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    console.log(details, details.payer);
+                    alert('Transacción completada por ' + details.payer.name.given_name);
+                    fetch('https://email-action-lab.vercel.app/send-email', {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                          to:[ 'xfpad93@gmail.com','vetdayanita@gmail.com'],
+                          subject: 'Confirmación de Pago',
+                          html: '<p>Gracias por tu compra, ' + details.payer.name.given_name + '!</p>' +
+                          '<p>Tu número de orden es: ' + details.id + '</p>' +
+                          '<p>Estado de la transacción: ' + details.status + '</p>'                        })
+                      }).then(response => response.json())
+                        .then(data => {
+                          console.log('Correo enviado:', data);
+                        })
+                        .catch(error => {
+                          console.error('Error enviando correo:', error);
+                        });
+                });
+            }
+        }).render('#paypal-button-container');
+  
+      </script>
+
 </body>
 </html>
