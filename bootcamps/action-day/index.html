@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/bootcamp/action-day.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>ActionDay</title>
 </head>
 <body>
@@ -189,9 +190,10 @@
                 <h2>COMPRAR <span class="general">ENTRADA GENERAL ($147)</span></h2>
                 <h3>Recuerda enviarnos tu nombre <br>cédula y una foto del recibo a <br><span>info@actionlab.club o 098065907</span></h3>
                 <div class="buttons">
-                    <a href="https://payp.page.link/Vn8G" class="btn">PAGAR CON PAYPHONE</a>
-                    <a href="https://www.paypal.com/ncp/payment/YWCNNUZFNJHT8" class="btn">PAGAR CON PAYPAL</a>
-                    <div id="paypal-button-container"></div>
+                  <!--   <a href="https://payp.page.link/Vn8G" class="btn">PAGAR CON PAYPHONE</a> -->
+                  <button class="btn" style="border:none;" id="pay-general" data-price="147" data-description="Entrada General">Pagar Entrada General ($147)</button>
+
+                   
                  
                 </div>
             </div>
@@ -202,8 +204,8 @@
                 <h3>Recuerda enviarnos tu nombre <br>cédula y una foto del recibo a <br>info@actionlab.club o 098065907</h3>
         
                 <div class="buttons">
-                    <a href="https://payp.page.link/yf7S" class="btn">PAGAR CON PAYPHONE</a>
-                    <a href="https://www.paypal.com/ncp/payment/V8QSADP59Q9W8" class="btn">PAGAR CON PAYPAL</a>
+                    <button class="btn" style="border:none;" id="pay-vip" data-price="167" data-description="Entrada Vip">Pagar Entrada VIP ($167)</button>
+
                 </div>
             </div>
         </div>
@@ -212,57 +214,226 @@
         <h3 class="transfer-sub">Te compartimos los datos de la misma, <span>envía tu comprobante de pago a info@actionlab.club</span></h3>
         <img class="transferImg" src="../../assets/images/Bootcamp/action-day/transfer.png" alt="">
     </section>
-<script src="https://www.paypal.com/sdk/js?client-id=AZDdlO1sk1xYrUuVgUCk20zmib9zcF1W0KutgnQlMSkrjg5Kn-VZJqVVrLA9dYnSeIGSQIDczc53_GOD&components=buttons&currency=USD&locale=es_EC"></script>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Datos de la persona que asistira al Action Day</h2>
+            <div class="">
+                <label for="">Nombre</label>
+                <input type="text" name="name" >
+            </div>
+            <div class="">
+                <label for="">Correo</label>    
+                <input type="text" name="email" >
+            </div>
+            <div class="">
+                <label for="">Numero de teléfono </label>
+                <input type="tel" name="phone">
+            </div>
+            <div class="buttons">
+                <div class="blockButtons">
+                </div>
+                    <div id="paypal-button-container"></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="loader" id="loader" style="display:none;"></div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AZHJj4SMRrvuLbOK-cyH9xgJG48c7w2YH5YaPSYd6u98nTDFrd12P-HM70J1fjHLeccGM5dt8WI0PLaQ&components=buttons&currency=USD&locale=es_EC"></script>
    
 
-    <script>
-        paypal.Buttons({
+<script>
+    const modal = document.querySelector('.modal');
+    const btn = document.getElementById('pay-general');
+    const span = document.getElementsByClassName("close")[0];
+    const nameInput = document.querySelector('input[name="name"]');
+    const emailInput = document.querySelector('input[name="email"]');
+    const phoneInput = document.querySelector('input[name="phone"]');
+    const blockButtons = document.querySelector('.blockButtons');
+
+    document.querySelectorAll('.btn[data-price]').forEach(button => {
+        button.addEventListener('click', function() {
+            const price = this.getAttribute('data-price');
+            const description = this.getAttribute('data-description');  // Obtiene el texto del botón, que incluye la descripción de la entrada
+            modal.style.display = "flex";
+            document.getElementById('paypal-button-container').setAttribute('data-price', price);
+            document.getElementById('paypal-button-container').setAttribute('data-description', description);
+            renderPaypalButtons(price, description);
+        });
+    });
+
+    btn.onclick = function() {
+        modal.style.display = "flex";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    function validateInputs() {
+        // Expresión regular para validar el email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // Verificar si todos los campos están llenos y el email tiene formato correcto
+        if (nameInput.value.trim() && emailRegex.test(emailInput.value) && phoneInput.value.trim()) {
+            blockButtons.style.height = '0'; // Cambiar a 0 para desbloquear
+        } else {
+            blockButtons.style.height = '100%'; // Mantener bloqueado
+        }
+    }
+
+    nameInput.addEventListener('input', validateInputs);
+    emailInput.addEventListener('input', validateInputs);
+    phoneInput.addEventListener('input', validateInputs);
+    validateInputs();
+
+    blockButtons.addEventListener('click', function() {
+        let message = 'Debes llenar todos los datos correctamente antes de proceder al pago: ';
+        let errors = [];
+
+        if (!nameInput.value.trim()) {
+            errors.push('el nombre está vacío');
+        }
+        if (!emailInput.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+            errors.push('el correo es inválido o está vacío');
+        }
+        if (!phoneInput.value.trim()) {
+            errors.push('el teléfono está vacío');
+        }
+
+        if (errors.length > 0) {
+            Toastify({
+                text: message + errors.join(', '),
+                duration: 3000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: 'center', // `left`, `center` or `right`
+                backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+                style: {
+                    lineheight: "1.5",
+                  },
+                className: "info",
+            }).showToast();
+        }
+    });
+
+    function renderPaypalButtons(price,description) {
+        if (window.paypalButtonInstance) {
+            window.paypalButtonInstance.close();
+        }
+        window.paypalButtonInstance = paypal.Buttons({
             style: {
-              layout: 'vertical',
-              color:  'blue',
-              shape:  'rect',
-              label:  'paypal'
+                layout: 'vertical',
+                color: 'blue',
+                shape: 'rect',
+                label: 'paypal'
             },
-        
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: '3.00'
-                        }
-                    }],
-                    application_context: {
-                        shipping_preference: 'NO_SHIPPING' // Indica que no se requiere dirección de envío
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: price
                     }
+                }],
+                application_context: {
+                    shipping_preference: 'NO_SHIPPING' // Sin dirección de envío
+                }
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                document.getElementById('loader').style.display = 'none';
+                Toastify({
+                    text: 'Su pago se ha realizado correctamente. En breve recibirá un correo de confirmación.',
+                    duration: 3000,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: 'center', // `left`, `center` or `right`
+                    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+                    style: {
+                        lineheight: "1.5",
+                      },
+                    className: "info",
+                }).showToast();
+                fetch('https://email-action-lab.vercel.app/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        to: ['xfpad93@gmail.com', emailInput.value],
+                        subject: 'Confirmación de Pago',
+                        html: `
+                        <div style="font-family: Arial, max-width:600px; sans-serif; color: #333;">
+                            <h1 style="color: #4A90E2;">¡Gracias por tu compra, ${nameInput.value}!</h1>
+                            <p style="color:black">Queremos confirmar los detalles de tu compra y proporcionarte la información relevante de tu pedido.</p>
+                            <hr style="border: none; height: 1px; background-color: #ccc;" />
+                            <h2 style="color:black" >Detalles del Pedido:</h2>
+                            <ul>
+                                <li style="color:black"><strong>Entrada:</strong> ${description}</li>
+                                <li style="color:black"><strong>Precio pagado:</strong> $${price}</li>
+                                <li style="color:black"><strong>Nombre:</strong> ${nameInput.value}</li>
+                                <li style="color:black"><strong>Correo:</strong> ${emailInput.value}</li>
+                                <li style="color:black"><strong>Teléfono:</strong> ${phoneInput.value}</li>
+                                <li style="color:black"><strong>Número de Orden:</strong> ${details.id}</li>
+                                <li style="color:black"><strong>Estado de la Transacción:</strong> ${details.status}</li>
+                            </ul>
+                            <p style="color:black">Si tienes alguna pregunta o necesitas ayuda adicional, no dudes en contactarnos.</p>
+                            <p style="font-size: 0.9em; color:black;">Saludos,<br>El Equipo de ActionLab</p>
+                        </div>
+                    `
+                    })
+                }).then(response => response.json())
+                .then(data => {
+                    Toastify({
+                        text: 'El correo de confirmación ha sido enviado correctamente. ¡Gracias por tu compra!',
+                        duration: 3000,
+                        close: true,
+                        gravity: "top", // `top` or `bottom`
+                        position: 'center', // `left`, `center` or `right`
+                        backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+                        style: {
+                            lineheight: "1.5",
+                          },
+                        className: "info",
+                    }).showToast();
+                    
+                    console.log('Correo enviado:', data);
+
+                })
+                .catch(error => {
+                    Toastify({
+                        text: 'Su pago se ha realizado correctamente, pero hubo un error al enviar el correo de confirmación. Por favor, contáctenos para confirmar su pago.',
+                        duration: 3000,
+                        close: true,
+                        gravity: "top", // `top` or `bottom`
+                        position: 'center', // `left`, `center` or `right`
+                        backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+                        style: {
+                            lineheight: "1.5",
+                          },
+                        className: "info",
+                    }).showToast();
+                    console.error('Error enviando correo:', error);
                 });
-            },
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    console.log(details, details.payer);
-                    alert('Transacción completada por ' + details.payer.name.given_name);
-                    fetch('https://email-action-lab.vercel.app/send-email', {
-                        method: 'POST',
-                        headers: {
-                          'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                          to:[ 'xfpad93@gmail.com','vetdayanita@gmail.com'],
-                          subject: 'Confirmación de Pago',
-                          html: '<p>Gracias por tu compra, ' + details.payer.name.given_name + '!</p>' +
-                          '<p>Tu número de orden es: ' + details.id + '</p>' +
-                          '<p>Estado de la transacción: ' + details.status + '</p>'                        })
-                      }).then(response => response.json())
-                        .then(data => {
-                          console.log('Correo enviado:', data);
-                        })
-                        .catch(error => {
-                          console.error('Error enviando correo:', error);
-                        });
-                });
-            }
-        }).render('#paypal-button-container');
-  
-      </script>
+            });
+        },
+        onError: function(err) {
+            // Asegúrate de ocultar el loader también cuando haya un error
+            document.getElementById('loader').style.display = 'none';
+            console.error('Error en el pago con PayPal:', err);
+        }
+    })
+    window.paypalButtonInstance.render('#paypal-button-container');
+}
+</script>
+
+
 
 </body>
 </html>
