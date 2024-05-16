@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.schedule-item .event-info').forEach((detail, index) => {
         detail.classList.remove('isActive');
         const buttonImage = toggleButtons[index].querySelector('.toggle-image');
-        buttonImage.src = './assets/images/icons/down.webp';
+        buttonImage.src = '../../assets/images/icons/down.webp';
         buttonImage.alt = 'Expandir';
         toggleButtons[index].classList.remove('next-button-active');
       });
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       closeAllDetails();
       if (!isCurrentlyActive) {
         eventInfo.classList.add('isActive');
-        toggleImage.src = './assets/images/icons/up.webp';
+        toggleImage.src = '../../assets/images/icons/up.webp';
         toggleImage.alt = 'Contraer';
         // Añadir la clase de animación al siguiente botón si existe
         if (index + 1 < toggleButtons.length) {

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Tickets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+        th {
+            background-color: #009688;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .filter-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Listado de Tickets</h1>
+    <div class="filter-section">
+        <input type="text" id="nameFilter" placeholder="Filtrar por nombre">
+        <input type="date" id="dateFilter">
+        <select id="typeFilter">
+            <option value="">Todos los tipos</option>
+            <option value="Entrada General">Entrada General</option>
+            <option value="Entrada Vip">Entrada VIP</option>
+        </select>
+        <button onclick="applyFilters()">Aplicar Filtros</button>
+    </div>
+    <div>
+        <p>Total Entrada General: <span id="countGeneral">0</span></p>
+        <p>Total Entrada VIP: <span id="countVip">0</span></p>
+    </div>
+    <table id="ticketsTable">
+        <thead>
+            <tr>
+                <th>Tipo de Entrada</th>
+                <th>Precio Pagado</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Número de Orden</th>
+                <th>Estado de la Transacción</th>
+                <th>Fecha de Creación</th>
+                <th>Fecha de Actualización</th>
+                <th>Estado</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las filas se añadirán dinámicamente con JavaScript -->
+        </tbody>
+    </table>
+    <script>
+        let ticketsData = [];
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://email-action-lab.vercel.app/tickets')
+            .then(response => response.json())
+            .then(data => {
+                ticketsData = data;
+                renderTickets(ticketsData);
+                updateCounts(ticketsData);  // Esto establece el conteo total basado en la carga inicial
+            })
+            .catch(error => console.error('Error al cargar los datos:', error));
+        });
+
+        async function fetchTickets() {
+            try {
+                const response = await fetch('https://email-action-lab.vercel.app/tickets');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch tickets');
+                }
+                const data = await response.json();
+                ticketsData = data;
+                renderTickets(ticketsData);
+                updateCounts(ticketsData);  // Esto establece el conteo total basado en la carga inicial
+            } catch (error) {
+                console.error('Error al cargar los datos:', error);
+                alert('Error al cargar los datos');
+            }
+        }
+
+        async function toggleSeen(id){
+            try {
+                const response = await fetch(`https://email-action-lab.vercel.app/tickets/${id}/toggle-seen`, {
+                    method: 'PUT'
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to toggle seen status');
+                }
+                const data = await response.json();
+                alert('Estado de visto actualizado');
+                fetchTickets(); // Recargar los tickets después de cambiar el estado
+            } catch (error) {
+                console.error('Error al actualizar el estado visto:', error);
+                alert('Error al actualizar el estado visto');
+            }
+        }
+
+      
+        
+    
+        function renderTickets(tickets) {
+            const tableBody = document.getElementById('ticketsTable').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = ''; // Limpiar el cuerpo de la tabla antes de añadir nuevas filas
+            tickets.forEach(ticket => {
+                const row = tableBody.insertRow();
+                row.insertCell(0).textContent = ticket.entryType;
+                row.insertCell(1).textContent = ticket.pricePaid;
+                row.insertCell(2).textContent = ticket.name;
+                row.insertCell(3).textContent = ticket.email;
+                row.insertCell(4).textContent = ticket.phone;
+                row.insertCell(5).textContent = ticket.orderNumber;
+                row.insertCell(6).textContent = ticket.transactionStatus;
+                row.insertCell(7).textContent = new Date(ticket.createdAt).toLocaleString();
+                row.insertCell(8).textContent = new Date(ticket.updatedAt).toLocaleString();
+                row.insertCell(9).textContent = ticket.seen ? 'Revisado' : 'No Revisado';
+                
+                const toggleCell = row.insertCell(10);
+                const toggleBtn = document.createElement('button');
+                toggleBtn.textContent = ticket.seen ? 'Marcar como No Visto' : 'Marcar como Visto';
+                toggleBtn.onclick = function() { toggleSeen(ticket._id); };
+                toggleCell.appendChild(toggleBtn);
+            });
+        }
+    
+        function applyFilters() {
+            const nameValue = document.getElementById('nameFilter').value.toLowerCase();
+            const dateValue = document.getElementById('dateFilter').value;
+            const typeValue = document.getElementById('typeFilter').value;
+    
+            const filteredTickets = ticketsData.filter(ticket => {
+                const ticketDate = new Date(ticket.createdAt).toISOString().split('T')[0];
+                return ticket.name.toLowerCase().includes(nameValue) &&
+                       (!dateValue || ticketDate === dateValue) &&
+                       (!typeValue || ticket.entryType === typeValue);  // Corregido a ticket.entryType
+            });
+    
+            renderTickets(filteredTickets);
+        }
+    
+        function updateCounts(tickets) {
+            const countGeneral = tickets.filter(ticket => ticket.entryType === 'Entrada General').length;
+            const countVip = tickets.filter(ticket => ticket.entryType === 'Entrada Vip').length;
+    
+            document.getElementById('countGeneral').textContent = countGeneral;
+            document.getElementById('countVip').textContent = countVip;
+        }
+    </script>
+    
+</body>
+</html>
