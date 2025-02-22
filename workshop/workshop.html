@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Content</title>
+    <link rel="stylesheet" href="../styles/workshop/workshop.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="../assets/images/logos/logo-complete.png" alt="Logo" class="logo">
+            <div class="user-info">
+                <span class="welcome-text">Bienvenido, <span id="userName">Frank</span></span>
+                <button id="logoutBtn" class="logout-btn">Cerrar Sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Workshop de Marketing Digital con IA</h1>
+        
+        <section class="workshop-section">
+            <div class="workshop-card">
+                <h2>Etapa 1: Fundamentos y Planificación</h2>
+                <div class="video-container">
+                    <video controls poster="../assets/images/workshop/SmartMarketing.png">
+                        <source src="../assets/videos/workshop/2.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+                <div class="content-details">
+                    <h3>Contenido:</h3>
+                    <ul>
+                        <li>Diagnóstico</li>
+                        <li>Planificación</li>
+                        <li>Creación de contenido</li>
+                    </ul>
+                    <h3>Herramientas IA:</h3>
+                    <ul>
+                        <li>ChatGPT</li>
+                        <li>Claude.ai</li>
+                        <li>Perplexity</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="workshop-card">
+                <h2>Etapa 2: Implementación y Análisis</h2>
+                <div class="video-container">
+                    <video controls poster="../assets/images/workshop/SmartMarketing.png">
+                        <source src="../assets/videos/workshop/1.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+                <div class="content-details">
+                    <h3>Contenido:</h3>
+                    <ul>
+                        <li>Proceso y etapas de creación de Funnel</li>
+                        <li>Uso de 3 herramientas de IA</li>
+                        <li>Hacks para métricas con ChatGPT</li>
+                        <li>Cálculo de inversión tiempo vs dinero</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Verificar si el usuario está logueado
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = './';
+        }
+
+        // Mostrar nombre del usuario
+        document.getElementById('userName').textContent = localStorage.getItem('userName') || 'Frank';
+
+        // Manejar el cierre de sesión
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userName');
+            window.location.href = './';
+        });
+    </script>
+</body>
+</html> 

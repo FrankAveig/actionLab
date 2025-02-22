@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Workshop</title>
+    <link rel="stylesheet" href="../styles/workshop/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="../assets/images/logos/logo-complete.png" alt="Logo" class="logo">
+            <h2>Accede al Workshop</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                </div>
+                <button type="submit" class="login-btn">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Objeto con las cuentas permitidas
+        const accounts = {
+            'xfpad93@gmail.com': {
+                password: 'Admin123#',
+                name: 'Frank'
+            },
+            'demo@example.com': {
+                password: 'Demo123#',
+                name: 'Demo User'
+            },
+            'test@example.com': {
+                password: 'Test123#',
+                name: 'Test User'
+            }
+        };
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Verificar si el email existe y la contraseña coincide
+            if (accounts[email] && accounts[email].password === password) {
+                // Guardar en localStorage para simular una sesión
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('userName', accounts[email].name);
+                window.location.href = 'workshop.html';
+            } else {
+                alert('Email o contraseña incorrectos');
+            }
+        });
+    </script>
+</body>
+</html> 

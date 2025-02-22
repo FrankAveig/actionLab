@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/index.css">
-    <title>Lector de Código QR</title>
+<!--     <link rel="stylesheet" href="./styles/index.css">
+ -->    <title>Lector de Código QR</title>
     <!-- Enlace a la biblioteca jsQR a través de un CDN -->
     <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.min.js"></script>
     <style>
@@ -117,8 +117,10 @@
                     requestAnimationFrame(tick);
                 }
             }
+            
         
             async function sendPostRequest(url) {
+                alert(url)
                 try {
                     const response = await fetch(url, {
                         method: 'POST',
@@ -129,23 +131,8 @@
                     });
         
                     let {message} = await response.json();
-                    console.log(message == 'El emprendedor ya ingresó al evento');
-                    if (response.ok) {
-                            Swal.fire({
-                                title: `${message == 'El emprendedor ya ingresó al evento' ? 'Advertencia' : 'Checkin Completo' }`,
-                                text: `${message}`,
-                                icon: `${message == 'El emprendedor ya ingresó al evento' ? 'warning' : 'success' }`,
-                                confirmButtonText: 'Ok'
-                            }
-                            ).then((result) => {
-                                if (result.isConfirmed) {
-                                    startButton.click()
-                                }
-                            });
-                
-                    } else {
-                        throw new Error('La petición no fue exitosa.');
-                    }
+                    
+                    alert(message)
                 } catch (error) {
                     // Muestra una alerta de error
                     Swal.fire(

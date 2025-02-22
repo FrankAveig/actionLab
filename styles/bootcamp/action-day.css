@@ -1014,6 +1014,7 @@ header figure img {
     margin: 0;
     width: 100vw;
     overflow-x: hidden;
+    z-index: -1;
   }
   .hero figure img {
     width: auto;

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Lector de Código QR para la comida</title>
+    <!-- Enlace a la biblioteca jsQR a través de un CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.min.js"></script>
+    <style>
+        /* Estilos básicos */
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(-60deg, #da1a5d9d 33.33%, #ef64359a 33.33% 66.66%, #1db6bea4 66.66%);
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            color: white;	
+        }
+        #qr-video {
+            width: 100%;
+            height: 300px;
+        }
+        #startButton {
+            margin-top: 10px;
+        }
+        #qr-result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lector de Código QR para la comida</h1>
+    
+    <video id="qr-video"></video>
+    <button id="startButton">Iniciar Cámara</button>
+<!--     <p id="qr-result">Resultado del QR: <span id="output"></span></p>
+ -->    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        let token = '';
+        window.onload = async function() {
+            try {
+                const response = await fetch('https://driedfruitsami.com/api-actionlab/public/api/v1/user/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: 'dev.oscar.romero@gmail.com',
+                        password: 'Actionlab.2'
+                    })
+                });
+
+                if (response.ok) {
+                    const {data} = await response.json();
+                    // Almacena el token de acceso o maneja la respuesta como necesites
+                    console.log('Login exitoso:', data);
+                    token = data.token;
+                } else {
+                    throw new Error('Login fallido');
+                }
+            } catch (error) {
+                console.error('Error durante el login:', error);
+            }
+        }
+
+
+        document.getElementById('startButton').addEventListener('click', () => {
+            const video = document.getElementById('qr-video');
+            const canvasElement = document.createElement('canvas');
+            let processing = false;
+        
+            // Acceder a la cámara
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+                .then(function(stream) {
+                    video.srcObject = stream;
+                    video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+                    video.play();
+                    tick();
+                });
+
+                function stopCamera() {
+                    const video = document.getElementById('qr-video');
+                    if (video.srcObject) {
+                        // Obtiene las pistas del stream de video
+                        let tracks = video.srcObject.getTracks();
+                
+                        // Detiene todas las pistas
+                        tracks.forEach(track => track.stop());
+                
+                        // Limpia el srcObject del video
+                        video.srcObject = null;
+                    }
+                }
+        
+            async function tick() {
+                if (video.readyState === video.HAVE_ENOUGH_DATA && !processing) {
+                    canvasElement.height = video.videoHeight;
+                    canvasElement.width = video.videoWidth;
+                    const canvas = canvasElement.getContext('2d');
+                    canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+                    var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
+                    var code = jsQR(imageData.data, imageData.width, imageData.height, {
+                        inversionAttempts: "dontInvert",
+                    });
+                    if (code) {
+                        processing = true;
+                        const urlQr = code.data
+                        let newId =  urlQr.match(/\/(\d+)$/)[1];
+                 
+                        
+                        await sendPostRequest(newId); 
+
+                        stopCamera();
+                        
+                    }
+                }
+                if (!processing) {
+                    requestAnimationFrame(tick);
+                }
+            }
+            
+        
+            async function sendPostRequest(id) {
+                alert(`https://driedfruitsami.com/api-actionlab/public/api/v1/user/employee/reservations/food-validate-qr/${id}`)
+                try {
+                    const response = await fetch(`https://driedfruitsami.com/api-actionlab/public/api/v1/user/employee/reservations/food-validate-qr/${id}`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    let {message} = await response.json();
+                    alert(id)
+                    alert(message)
+                    // Muestra una alerta con el mensaje de la respuesta
+              
+
+                    
+                } catch (error) {
+                    // Muestra una alerta de error
+                    Swal.fire(
+                        'Error',
+                        'Hubo un problema con la petición: ' + error.message,
+                        'error'
+                    ).then((result) => {
+                        if (result.isConfirmed) {
+                             startButton.click()
+                        }
+                    });
+                }
+            }
+        });
+    </script>

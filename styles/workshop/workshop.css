@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: poppins, sans-serif;
+    background-color: #f6f7fd;
+}
+
+header {
+    background-color: white;
+    padding: 15px 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 40px;
+}
+
+.logout-btn {
+    background-color: #da1a5d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c0164f;
+}
+
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.workshop-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.workshop-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    background-color: black;
+}
+
+h2 {
+    color: #da1a5d;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #333;
+    margin: 15px 0 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #666;
+    position: relative;
+    padding-left: 20px;
+}
+
+li:before {
+    content: "•";
+    color: #da1a5d;
+    position: absolute;
+    left: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.welcome-text {
+    color: #333;
+    font-size: 16px;
+}
+
+.welcome-text #userName {
+    color: #da1a5d;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .workshop-section {
+        grid-template-columns: 1fr;
+    }
+    
+    main {
+        padding: 0 15px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+} 

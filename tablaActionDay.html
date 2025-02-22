@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla con Paginación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .pagination button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .pagination button:disabled {
+            background-color: #ccc;
+        }
+        
+        .pagination button.active {
+            background-color: #0056b3;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Usuarios</h1>
+        <table id="usersTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Estado</th>
+                    <th>Tipo de Reserva</th>
+                    <th>Creado</th>
+                    <th>Actualizado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Datos se cargarán aquí dinámicamente -->
+            </tbody>
+        </table>
+        <div id="pagination" class="pagination">
+            <!-- Paginación se cargará aquí dinámicamente -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const apiUrl = "https://driedfruitsami.com/api-actionlab/public/api/v1/user/admin/users";
+            let currentPage = 1;
+            const perPage = 10;
+        
+            async function fetchData(page) {
+                try {
+                    const response = await fetch(`${apiUrl}?page=${page}`);
+                    const result = await response.json();
+                    if (result.status === 200) {
+                        displayData(result.data.data);
+                        setupPagination(result.data);
+                    } else {
+                        console.error("Error fetching data", result.message);
+                    }
+                } catch (error) {
+                    console.error("Error fetching data", error);
+                }
+            }
+        
+            function displayData(users) {
+                const tableBody = document.querySelector("#usersTable tbody");
+                tableBody.innerHTML = "";
+                users.forEach(user => {
+                    const row = `
+                        <tr>
+                            <td>${user.id}</td>
+                            <td>${user.name}</td>
+                            <td>${user.last_name}</td>
+                            <td>${user.email}</td>
+                            <td>${user.status}</td>
+                            <td>${user.reservation_type}</td>
+                            <td>${new Date(user.created_at).toLocaleDateString()}</td>
+                            <td>${new Date(user.updated_at).toLocaleDateString()}</td>
+                        </tr>
+                    `;
+                    tableBody.insertAdjacentHTML('beforeend', row);
+                });
+            }
+        
+            function setupPagination(data) {
+                const pagination = document.getElementById("pagination");
+                pagination.innerHTML = "";
+        
+                const prevButton = document.createElement("button");
+                prevButton.textContent = "Anterior";
+                prevButton.disabled = !data.prev_page_url;
+                prevButton.addEventListener("click", () => {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        fetchData(currentPage);
+                    }
+                });
+                pagination.appendChild(prevButton);
+        
+                data.links.forEach(link => {
+                    if (link.url) {
+                        const pageButton = document.createElement("button");
+                        pageButton.textContent = link.label;
+                        pageButton.classList.toggle("active", link.active);
+                        pageButton.addEventListener("click", () => {
+                            currentPage = new URL(link.url).searchParams.get("page");
+                            fetchData(currentPage);
+                        });
+                        pagination.appendChild(pageButton);
+                    }
+                });
+        
+                const nextButton = document.createElement("button");
+                nextButton.textContent = "Siguiente";
+                nextButton.disabled = !data.next_page_url;
+                nextButton.addEventListener("click", () => {
+                    if (currentPage < data.last_page) {
+                        currentPage++;
+                        fetchData(currentPage);
+                    }
+                });
+                pagination.appendChild(nextButton);
+            }
+        
+            fetchData(currentPage);
+        });
+        
+        
+    </script>
+</body>
+</html>
