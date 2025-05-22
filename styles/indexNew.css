@@ -1,0 +1,698 @@
+/* ====== BOTONES ====== */
+
+.header{
+    width: 100vw!important;
+}
+
+.header img{
+    width: 200px!important;
+}
+
+
+.hero{
+    background-image: url(../assets/images/index/hero.jpg);
+    background-position: 0 -450px;
+}
+
+
+.hero .hero__content h1 span {
+    color: #da1a5d;
+  }
+
+h1 span{
+    color: #DA1A5D;
+}
+.hero .hero__content h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.hero .hero__content p {
+font-size: 20px!important;
+}
+  
+.hero__buttons-cta{
+    display: flex;
+    gap: 20px;
+
+}
+
+.hero__buttons-cta a{
+    width: max-content!important;
+}
+
+.main__description{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.main .main__description figure{
+    width: 38%!important;
+}
+
+.main .main__description .text{
+    width: 62%!important;
+}
+
+.main{
+    padding: 0!important;
+    margin-left: 0!important;
+    margin-right: 0!important;
+    width: 100%!important;
+}
+
+.main .main__description figure {
+    height:100%!important;
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    margin: 0!important;
+
+}
+
+.main .main__description figure img{
+    max-width: unset!important;
+
+    
+
+}
+
+.main .main__description .text h2{
+  font-size: 2rem;
+}
+
+.general-button, .btn-actionlab {
+    width: max-content!important;
+  text-decoration: none;
+  color: #fff;
+  background-color: #da1a5d;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-top: 20px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+.general-button:hover, .btn-actionlab:hover {
+  background-color: transparent;
+  border: 1px solid #da1a5d;
+  color: #da1a5d;
+}
+.btn-actionlab.secondary {
+  background: #1db6be;
+  margin-left: 10px;
+}
+.btn-actionlab.orange {
+  background: #ef6535;
+}
+
+/* ====== SECCIONES GENERALES ====== */
+.section-actionlab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 60px;
+}
+.section-actionlab h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.section-actionlab .section-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  width: 90%;
+
+}
+
+/* ====== TARJETAS Y BLOQUES ====== */
+.card-actionlab {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 30px;
+  min-width: 250px;
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+.card-actionlab h3 {
+  color: #da1a5d;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.card-actionlab .tag {
+  background: #1db6be;
+  color: #fff;
+  border-radius: 5px;
+  padding: 4px 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+.card-actionlab .carousel-placeholder {
+  background: #eee;
+  height: 120px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1.1rem;
+}
+
+/* ====== LISTAS Y UL ====== */
+.section-actionlab ul {
+  margin-top: 20px;
+  padding-left: 18px;
+  text-align: left;
+}
+.section-actionlab ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* ====== LIBRO ====== */
+.book-section {
+  position: relative;
+  min-height: 420px;
+  padding: 0;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.book-section h2{
+  text-align: start;
+}
+
+.book-section .book-bg {
+  background-image: url('../assets/images/index/bg1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+
+
+  min-height: 420px;
+  padding: 0;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.book-section .book-info {
+  width: 50%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.book-section .highlight-title {
+  display: inline-block;
+  background: #ffe600;
+  color: #222;
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding: 8px 18px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.book-section .highlight-box {
+  background: #ffe600;
+  color: #222;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 18px 22px;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.book-section .highlight-btn {
+  display: inline-block;
+  background: #ffe600;
+  color: #111;
+  font-weight: 900;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  padding: 10px 28px;
+  margin-top: 10px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 2px solid #222;
+  transition: background 0.2s, color 0.2s;
+}
+.book-section .highlight-btn:hover {
+  background: #222;
+  color: #ffe600;
+  border-color: #ffe600;
+}
+
+.book-section .book-mockup {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.book-section .book-mockup img {
+  max-width: 380px;
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+
+.section-row{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 90%;
+  justify-content: center;
+}
+
+.book-section h2{
+  text-align: center;
+  font-size: 2rem;
+}
+
+#soluciones{
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0px;
+}
+
+#soluciones .section-row{
+  margin: 0;
+}
+
+#soluciones h2{
+  font-size: 2rem;
+}
+
+#equipo{
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0px;
+}
+
+#equipo .section-row{
+  margin: 0;
+}
+/* ====== TESTIMONIOS ====== */
+.testimonio-card {
+  background: #1db6be;
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  min-width: 250px;
+  max-width: 320px;
+  text-align: left;
+}
+.testimonio-card h3 {
+  margin-top: 0;
+}
+.testimonio-card ul {
+  padding-left: 18px;
+}
+.testimonio-card ul li {
+  margin-bottom: 8px;
+}
+.testimonio-card .testimonios-placeholder {
+  margin-top: 20px;
+  color: #fff;
+  font-weight: 700;
+}
+.testimonio-img-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 0;
+  min-width: 250px;
+  max-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonio-img-card img {
+  max-width: 200px;
+  border-radius: 20px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+  .section-actionlab .section-row,
+  .book-section .book-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hero-actionlab {
+    flex-direction: column;
+    padding-top: 80px;
+  }
+  .hero-actionlab .hero__container img {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+.main__description {
+  width: 100%!important;
+  margin: 0!important;
+}
+
+.main .main__description .text{
+  width: 90%!important;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.hero__buttons-cta{
+  flex-direction: column;
+  gap: 0;
+}
+.main .main__description figure{
+  width: 90%!important;
+  margin: auto;
+}
+
+  .hero .hero__global {
+    max-width: 90%;
+  }
+  
+  .hero .hero__content h1 {
+    font-size: 2rem;
+
+  }
+    .hero .hero__content h2 {
+    font-size: 1.2rem;
+  }
+  .section-actionlab h2 {
+    font-size: 1.3rem;
+  }
+  .book-section h2 {
+    font-size: 1.3rem;
+  }
+  .book-section img{
+    display: none;
+  }
+
+  .book-section .section-row {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .book-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .book-section h2{
+    text-align: center;
+  }
+
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1002;
+  margin-left: auto;
+}
+.menu-toggle span {
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: #da1a5d;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Responsive: mostrar hamburguesa y ocultar menú */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: flex;
+  }
+  .header__navigation {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 70vw;
+    max-width: 320px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 16px rgba(0,0,0,0.08);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 60px 30px 30px 30px;
+    transition: right 0.3s;
+    z-index: 1001;
+  }
+  .header__navigation.open {
+    right: 0;
+  }
+  .header__navigation ul {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .header__navigation li {
+    width: 100%;
+  }
+  .header__navigation a {
+    font-size: 1.2rem;
+    color: #222;
+    width: 100%;
+    display: block;
+    padding: 8px 0;
+  }
+}
+
+/* ====== ¿QUÉ ES ACTIONLAB? ====== */
+.section-actionlab {
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 60px;
+  text-align: left;
+}
+
+.actionlab-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  min-width: 320px;
+}
+.actionlab-images .img-top {
+  width: 220px;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 2;
+}
+.actionlab-images .img-bottom {
+  width: 180px;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  position: absolute;
+  left: 60px;
+  top: 120px;
+  z-index: 1;
+}
+
+.actionlab-info {
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.highlight-title {
+  display: inline-block;
+  background: #ffe600;
+  color: #222;
+  font-weight: 800;
+  font-size: 1.4rem;
+  padding: 6px 18px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.highlight-sub {
+  display: inline-block;
+  background: #ffe600;
+  color: #222;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 4px 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.highlight-box {
+  background: #ffe600;
+  color: #222;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.highlight-box ul {
+  margin-top: 12px;
+  margin-bottom: 0;
+  padding-left: 22px;
+}
+.highlight-box li {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.highlight-btn {
+  display: inline-block;
+  background: #ffe600;
+  color: #111;
+  font-weight: 900;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  padding: 10px 28px;
+  margin-top: 10px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 2px solid #222;
+  transition: background 0.2s, color 0.2s;
+}
+.highlight-btn:hover {
+  background: #222;
+  color: #ffe600;
+  border-color: #ffe600;
+}
+
+@media (max-width: 900px) {
+  .section-actionlab {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+  .actionlab-images {
+    flex-direction: row;
+    min-width: unset;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .actionlab-images .img-bottom {
+    position: static;
+    left: unset;
+    top: unset;
+  }
+}
+
+/* === MIEMBROS DEL EQUIPO === */
+#equipo .section-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 30px;
+}
+#equipo .card-actionlab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 220px;
+  max-width: 260px;
+  padding: 32px 18px 22px 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border-radius: 16px;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+#equipo .card-actionlab:hover {
+  box-shadow: 0 6px 24px rgba(218,26,93,0.13);
+}
+#equipo .card-actionlab img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #f3f3f3;
+}
+#equipo .card-actionlab h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #da1a5d;
+  text-align: center;
+}
+#equipo .card-actionlab p {
+  font-size: 0.98rem;
+  color: #888;
+  margin-bottom: 12px;
+  text-align: center;
+}
+#equipo .card-actionlab div {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+#equipo .card-actionlab a img {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: #f7f7f7;
+  padding: 3px;
+  transition: background 0.2s;
+}
+#equipo .card-actionlab a img:hover {
+  background: #ffe6ef;
+}
+@media (max-width: 900px) {
+  #equipo .section-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  #equipo .card-actionlab {
+    min-width: 180px;
+    max-width: 320px;
+    width: 90vw;
+  }
+}

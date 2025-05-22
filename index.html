@@ -1,784 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/bootcamp/action-day.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <title>ActionDay</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/indexNew.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <title>ActionLab</title>
 </head>
 <body>
-    <header>
-        <figure>
-            <img src="../../assets/images/logos/logo-complete.png" alt="">
-        </figure>
-    </header>
-    <section class="hero">
-        <figure>
-            <img src="../../assets/images/Bootcamp/action-day/banner.png" alt="">
-        </figure>
-    
-        <div class="hero__container">
+  <header class="header">
+    <figure>
+      <img src="./assets/images/logos/logo-complete.png" alt="Logo ActionLab">
+    </figure>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="header__navigation" id="mainMenu">
+      <ul>
+        <li><a href="#programas">¿Qué es ActionLab?</a></li>
+        <li><a href="#libro">Libro</a></li>
+        <li><a href="#soluciones">Soluciones</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <h1>¡Adquiere el impacto para todo un año, en tan solo un día!</h1>
-            <h2><strong>BOOTCAMP ACTIONDAY</strong> (Club Nacional de Guayaquil - 8 de junio)</h2>
-            <div class="buttons__container">
-                <a href="#pay" class="btn">Comprar entrada</a>
-                <a class="btn" href="https://api.whatsapp.com/send?phone=959902680&text=Me%20interesa%20saber%20m%C3%A1s%20de%20ActionDay" class="btn">Contactar con un asesor </a>
+  <!-- HERO PRINCIPAL -->
+  <section class="hero">
+    <div class="hero__global">
+        <div class="hero__content">
+            <h1> Educación que <span>impulsa</span> negocios reales y personas conscientes</h1>
+            <p>Formación integral para quienes construyen empresas con propósito, estrategia y bienestar..</p>
+            <div class="hero__buttons-cta">
+                <a  href="#register">Explora nuestros programas</a>
+                <a  href="#register">Agenda una llamada estrategica</a>
             </div>
         </div>
-    </section>
-    <main class="main">
-        <div class="izq">
-
-            <h2><span>ActionDay</span> es para ti si...</h2>
-            <ul>
-                <li>Tienes<strong> retos financieros</strong> para escalar to facturación actual en tu negocio.</li>
-                <li><strong>No estás atrayendo a clientes correctos</strong> para tus servicios o productos, te cuesta entender a tu cliente ideal.</li>
-                <li><strong>No conoces estrategias de persuación</strong> para aumentar las posibilidades de venta.</li>
-                <li>No tienes idea de <strong>cómo estructurar un plan inicial de arranque efectivo</strong> para tu emprendimiento.</li>
-            </ul>
-        </div>
-        <div class="der">
-            <img src="../../assets/images/Bootcamp/action-day/2.png" alt="">
-        </div>
-    </main>
-    <a href="#pay" class="btn">ActionLab es para mi</a>
-    <section class="includes">
-        <h2 class="title">¿Qué incluye mi entrada?</h2>
-        <div class="includes__container">
-
-            <div class="izq">
-                <h2>Entrada general</h2>
-                <ul>
-                    <li>Kit de bienvenida General</li>
-                    <li>Acceso a Talleres y charlas</li>
-                <li>Almuerzo y refrigerio final</li>
-                <li>Espacios de Networking</li>
-            </ul>
-        </div>
-        <div class="der">
-            <h2>Entrada Vip</h2>
-            <ul>
-                <li>Kit de bienvenida Vip</li>
-                <li>Primeras filas del evento</li>
-                <li>Almuerzo con los speakers</li>
-            </ul>
-        </div>
-    </div>
-    </section>
-    <section class="more">
-        <h2 class="title">¡Pero eso no es todo!</h2>
-        <h3>Conoce los<span> BONUS</span> que tenemos para ti</h3>
-        <div class="cards">
-
-            <div class="card">
-                <img src="../../assets/images/Bootcamp/action-day/3.png" alt="">
-                <h3>Construye tu <span>pitch de ventas</span> infalible</h3>
-                <p>Obtén tu mejor discursos de ventas que genere confianza y cautive a tus clientes.</p>
+            <div class="hero__container">
+                <div class="bg"></div>
+                <div class="bg bg2"></div>
+                <div class="bg bg3"></div>
             </div>
-            <div class="card">
-                <img src="../../assets/images/Bootcamp/action-day/4.png" alt="">
-                <h3>El <span>cálculo perfecto</span> de tu nuevo <span>préstamo</span></h3>
-                <p>Descubre <strong>2 herramientas</strong> para calcular y planificar tu préstamo y <strong>toma decisiones financieras sin tener dolores de cabeza.</strong></p>
-            </div>
-            <div class="card">
-                <img src="../../assets/images/Bootcamp/action-day/5.png" alt="">
-                <h3>Los mejores <span>150 hooks</span> para crear contenido.</h3>
-                <p>Ten la 
-                    guía definitiva para crear contenido con <strong>ganchos y títulos irresistibles</strong> que vendan.</p>
-            </div>
-        </div>
-        <div class="cards">
-
-            <div class="card">
-                <img src="../../assets/images/Bootcamp/action-day/7.png" alt="">
-                <h3><span>Taller Online</span> La guía completa par tus <span class="blue">finanzas personales</span></h3>
-                <p>Potencia tu éxito financiero sin estrés. Aquí entenderás y aplicarás <strong>las principales bases que harán de ti un excelente gestor del dinero.</strong></p>
-            </div>
-            <div class="card">
-                <img src="../../assets/images/Bootcamp/action-day/6.png" alt="">
-                <h3><span>Taller Online</span> La magia de  <span class="blue">venderle a la mente</span></h3>
-                <p>Aprende, aprovecha y domina los principios de la mente humana para  <strong>aumentar la efectividad en tus cierres de venta.</strong></p>
-            </div>
-        </div>
-    </section>
-    <a href="#pay" class="btn"> Quiero una entrada</a>
-    <section class="speakers">
-        <div class="cards">
-            <div class="card">
-                <img src="../../assets/images/Bootcamp/action-day/8.png" alt="">
-                <h2>BIANCA BENAVIDES</h2>
-                <ul>
-                    <li>Ganadora RETO $10K de ventas en 24 horas (Colombia 2021).</li>
-                    <li>Organizadora del 1CCM, 1SSP, 2CCM, CUMBRE START (Ecuador).</li>
-                    <li>Magister en Administración de Empresas. </li>
-                    <li>Máster en Dirección Estratégica. </li>
-                    <li>Ingeniera Comercial con Mención en Marketing (UPS).</li>
-                    <li>Coach ejecutiva avalada por el Business Coaching School.</li>
-                    <li>Master Practitioner en PNL (Escuela José Torres & Asociados).</li>
-                </ul>
-            </div>
-            <div class="card">
-                <img src="../../assets/images/Bootcamp/action-day/9.png" alt="">
-                <h2>JOHNNY ESCOBAR</h2>
-                <ul>
-                    <li>Ing. Comercial con mención en Marketing.</li>
-                    <li>Máster en Inteligencia de Negocios.</li>
-                    <li>Certificado en Gestión de Proyectos y Microsoft Office Specialist.</li>
-                    <li>Más de 9 años de experiencia en el sector financiero.</li>
-                    <li>Actualmente se desempeña como consultor independiente, y emprendedor.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <img src="../../assets/images/Bootcamp/action-day/10.png" alt="">
-                <h2>ELSA SANTELICES</h2>
-                <ul>
-                    <li>Magister en Dirección de Empresas y Economía.</li>
-                    <li>Coach, Entrenadora y Conferencista y Miembro Certificado del Maxwell Leadership®.</li>
-                    <li>Coach Ontológico.</li>
-                    <li>Más de 15 años de experiencia liderando equipos de ventas en empresas nacionales y multinacionales.                    </li>
-                    <li>Coach de Liderazgo Personal</li>
-                </ul>
-            </div>
-            <div class="card">
-                <img src="../../assets/images/Bootcamp/action-day/11.png" alt="">
-                <h2>EDUARDO SPANDRE</h2>
-                <ul>
-                    <li>Coach científico especializado en liderazgo emocional y productivo certificado por Carlos Rossi.</li>
-                    <li>Coach fundacional de negocios certificado bajo el método EGM.</li>
-                    <li>Coach acelerador de negocios certificado bajo el método EGM.</li>
-                    <li>12 años de experiencia en industrias multinacionales en áreas de control y mejora continua</li>
-                
-                </ul>
-            </div>
-
-        </div>
-        <a href="#pay" class="btn">Quiero capacitarme con estos mentores</a>
-    </section>
-
-    <section class="schedule" id="schedule">
-
-        <div class="container">
-<!--           <h2 class="title">Contenido</h2>
- -->          <div class="line"></div>
-          <h3 class="title">
-            Descubre las charlas que tenemos preparadas para ti.</h3>
-        </div>
-        <div class="container container__schedule">
-
-         <!--  <div class="schedule-item">
-            <div class="time">
-            <span class="start-time">14:30 - 15:00</span> 
-            </div>
-            <div class="event-detail">
-              <div class="point1"></div>
-              <div class="event-name">
-                <h3>Registro de asistentes.</h3>
-                <span class="start-time start-time2">14:30 - 15:00</span> 
-
-              </div>
-            </div>
-          </div> -->
-
-         <!--  <div class="schedule-item">
-            <div class="time">
-             <span class="start-time">15:00 - 15:15</span> 
-              
-            </div>
-            <div class="event-detail">
-              <div class="point1"></div>
-              <div class="event-name">
-                <h3>Bienvenida al evento.</h3>
-               <span class="start-time start-time2">15:00 - 15:15</span> 
-
-              </div>
-            </div>
-          </div> -->
-
-
-          <div class="schedule-item">
-            <div class="time">
-             <!--  <span class="start-time">15:15 - 15:30</span>  -->
-
-            </div>
-                        <button class="toggle-button">
-              <img src="./assets/images/icons/down.webp" alt="Expandir" class="toggle-image">
-          </button>
-
-            <div class="event-detail">
-              <div class="event-name">
-                <h3> Descúbrete, Elígete y Reinvéntate</h3>
-                <!-- <span class="start-time start-time2">15:15 - 15:30</span>  -->
-                <p class="speaker-name">Eduardo José Spandre Zelaya</p>
-
-              </div>
-              <div class="event-info ">
-                  <div class="speaker-detail">
-                      <img src="../../assets/images/Bootcamp/action-day/11.png" alt="Eduardo Spandre" class="speaker-photo">
-                      <div class="speaker-info">
-                          <p class="speaker-bio"> Descúbrete, Elígete y Reinvéntate
-                            PONENTE: Eduardo José Spandre Zelaya
-                            Conectaremos con tu poder personal, con tu
-                            esencia como persona para trazar una ruta hacia tu
-                            bienestar para el logro de tus objetivos de negocio</p>
-                            <p>Conoceremos el proceso de la maestría para
-                                desarrollar una mentalidad de emprendedor sólida
-                                que te de la energía para volverte imparable a la
-                                hora de emprender</p>
-                                <p>
-                                    Descubrirás el motor principal que te impulsará al
-logro de tus objetivos más anhelados
-                                </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-
-          <div class="schedule-item">
-            <div class="time">
-<!--               <span class="start-time">15:30 - 15:45</span> 
- -->
-            </div>
-            <button class="toggle-button">
-              <img src="./assets/images/icons/down.webp" alt="Expandir" class="toggle-image">
-          </button>
-
-            <div class="event-detail">
-              <div class="event-name">
-                <h3>Atrae, Conecta y Fideliza.</h3>
-<!--                 <span class="start-time start-time2">15:30 - 15:45</span> 
- -->
-                <p class="speaker-name">Elsa Angélica Santelices Bahamonde</p>
-
-              </div>
-              <div class="event-info">
-                  <div class="speaker-detail">
-                    <img src="../../assets/images/Bootcamp/action-day/10.png" alt="Elsa Santelices" class="speaker-photo">
-                    <div class="speaker-info">
-                          <p class="speaker-bio">Exploraremos técnicas probadas para atraer la atención de
-                            clientes potenciales, desde la identificación de su público
-                            objetivo hasta la creación de mensajes persuasivos y el uso
-                            efectivo de canales de marketing.</p>
-                            <p>Analizaremos la importancia de establecer conexiones
-                                significativas con los clientes a través de una comunicación
-                                auténtica y empática.</p>
-                                <p>Descubriremos cómo construir relaciones sólidas que generen
-                                    confianza y lealtad a largo plazo.</p>
-                                    <p>Conoceremos estrategias para mantener a los clientes
-                                        existentes comprometidos y satisfechos, desde programas de
-                                        recompensas hasta un excelente servicio al cliente.
-                                        Aprenderemos cómo convertir clientes satisfechos en
-                                        defensores de la marca y promotores activos.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        
-
-    
-
-
-          <div class="schedule-item">
-            <div class="time">
-<!--               <span class="start-time"> 15:45 - 16:00</span> 
- -->
-            </div>
-                        <button class="toggle-button">
-              <img src="./assets/images/icons/down.webp" alt="Expandir" class="toggle-image">
-          </button>
-
-            <div class="event-detail">
-              <div class="event-name">
-                <h3> La Guía completa de tus finanzas Personales y de Negocio</h3>
-<!--                 <span class="start-time start-time2"> 15:45 - 16:00</span> 
- -->
-                <p class="speaker-name">Johnny Gonzalo Escobar Macías</p>
-
-              </div>
-              <div class="event-info">
-                  <div class="speaker-detail">
-                      <img src="../../assets/images/Bootcamp/action-day/9.png" alt="Johnny Escobar" class="speaker-photo">
-                      <div class="speaker-info">
-                          <p class="speaker-bio">Descubre la guía completa de finanzas personales y como es tu relación con el
-                            dinero, para ayudarte a tomar el control de tu futuro financiero.</p>
-                            <p>Desde la creación de un presupuesto efectivo hasta estrategias de inversión y
-                                manejo de deudas.</p>
-                                <p>Abarca todos los aspectos clave para mejorar tu salud financiera.</p>
-                                <p>Aprende a establecer metas financieras, proteger tus activos con seguros
-                                    adecuados y planificar para la jubilación.</p>
-                            <p>Con recursos educativos adicionales y consejos prácticos, te proporcionaremos
-                                los conocimientos necesarios para tomar decisiones financieras inteligentes.</p>
-                                <p>Y para tu emprendimiento tendrás los conocimientos clave para gestionar
-                                    eficazmente tus recursos y maximizar tu rentabilidad.</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-
-         <!--  <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">16:00 - 16:15</span> 
-            </div>
-            <div class="event-detail">
-              <div class="point1"></div>
-              <div class="event-name">
-                <h3>Receso</h3>
-                <span class="start-time start-time2">16:00 - 16:15</span> 
-
-              </div>
-            </div>
-          </div> -->
-        
-
             
-          <div class="schedule-item">
-            <div class="time">
-<!--               <span class="start-time">16:15 - 16:30</span> 
- -->
-            </div>
-                        <button class="toggle-button">
-              <img src="./assets/images/icons/down.webp" alt="Expandir" class="toggle-image">
-          </button>
-
-            <div class="event-detail">
-              <div class="event-name">
-                <h3>Las Ventas lo curan todo</h3>
-<!--                 <span class="start-time start-time2">16:15 - 16:30</span> 
- -->
-                <p class="speaker-name">Bianca Benavides</p>
-
-              </div>
-              <div class="event-info">
-                  <div class="speaker-detail">
-                    <img src="../../assets/images/Bootcamp/action-day/8.png" alt="Bianca Benavides" class="speaker-photo">
-                    <div class="speaker-info">
-                          <p class="speaker-bio">Descubrirás cómo proyectar confianza en tus redes sociales para
-                            influir en las decisiones de tus clientes.</p>
-                            <p>A crear contenido de forma estratégica, fácil y rápido.</p>
-                            <p>A Crear ofertas irresistibles con urgencia y escasez para cerrar
-                                ventas por WhatsApp</p>
-                                <p><strong>Pero sobretodo cómo hacer de tus redes sociales una máquina de
-                                    ventas todos los días</strong></p>
-                        </div>
+            <!-- <div class="hero__card_time">
+                <div class="date">
+                    <div class="content">
+                        <img src="./assets/images/icons/calendar.webp" alt="incono calendario">
+                        <p>20 de Enero del 2024</p> 
+                    </div>
+                    <a href="https://maps.app.goo.gl/5EoFmTxt44rpDCNq7" target="_blank">
+                      <div class="content">
+                        <img src="./assets/images/icons/location.webp" alt="icono direccion">
+                        <p>Auditorio de la Cámara de Comercio</p>
+                      </div>
+                    </a>
+                </div>
+                <div class="countdown ">
+                    <div class="countdown__item">
+                        <p>00</p>
+                        <span>Days</span>
+                    </div>
+                    <div class="countdown__item">
+                        <p>00</p>
+                        <span>Hours</span>
+                    </div>
+                    <div class="countdown__item">
+                        <p>00</p>
+                        <span>Minutes</span>
+                    </div>
+                    <div class="countdown__item">
+                        <p>00</p>
+                        <span>Seconds</span>
                     </div>
                 </div>
             </div>
-          </div>
-        
-          
+        </div> -->
 
-         
-        
-          
+</section>
 
-        <!--   <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">16:30 - 16:45</span> 
-
-            </div>
-                        <button class="toggle-button">
-              <img src="./assets/images/icons/down.webp" alt="Expandir" class="toggle-image">
-          </button>
-
-            <div class="event-detail">
-              <div class="event-name">
-                <h3>Cómo afrontar conversaciones difíciles</h3>
-                <span class="start-time start-time2">16:30 - 16:45</span> 
-
-                <p class="speaker-name">Carla Cañarte Medina</p>
-
-              </div>
-              <div class="event-info">
-                  <div class="speaker-detail">
-                      <img src="./assets/images/speakers/carla.png" alt="Diana" class="speaker-photo">
-                      <div class="speaker-info">
-                          <p class="speaker-bio">En su charla, Carla Cañarte Medina aborda el tema de manejar conversaciones difíciles en el entorno de negocios, destacando que un buen ambiente laboral comienza con una comunicación efectiva. Enfatiza la importancia de centrarse en los hechos en lugar de en las personas para resolver conflictos. Además, ofrece preguntas clave para facilitar la resolución de estos y comparte técnicas de persuasión que son útiles para mejorar las ventas y la comunicación general en el ámbito laboral.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        
-          
- 
-         
-          
-
-          <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">16:45 - 17:00</span> 
-
-            </div>
-                        <button class="toggle-button">
-              <img src="./assets/images/icons/down.webp" alt="Expandir" class="toggle-image">
-          </button>
-
-            <div class="event-detail">
-              <div class="event-name">
-                <h3>La Mentalidad del Emprendedor</h3>
-                <span class="start-time start-time2">16:45 - 17:00</span> 
-
-                <p class="speaker-name">Eduardo José Spandre Zelaya</p>
-
-              </div>
-              <div class="event-info">
-                  <div class="speaker-detail">
-                      <img src="./assets/images/speakers/eduardo.png" alt="Diana" class="speaker-photo">
-                      <div class="speaker-info">
-                          <p class="speaker-bio">En "La Mentalidad del Emprendedor", Eduardo José Spandre Zelaya 
-                            discute cómo activar el potencial emprendedor interno. Destaca el incidente inductor
-                            como catalizador para despertar la confianza, y la importancia de reconocer dones y 
-                            talentos únicos. Eduardo aborda el uso del propósito de vida como motor de éxito y 
-                            ofrece estrategias para superar limitaciones personales y profesionales. Finaliza 
-                            con una metodología para desarrollar negocios basados en la pasión, enfocada en el crecimiento 
-                            y la escalabilidad.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        
-          
-
-          <div class="schedule-item">
-            <div class="time">
-              <span class="start-time">17:00 - 18:00</span> 
-            </div>
-            <div class="event-detail">
-              <div class="point1"></div>
-              <div class="event-name">
-                <h3>Networking Break.</h3>
-                <span class="start-time start-time2">17:00 - 18:00</span> 
-
-              </div>
-            </div>
-          </div> -->
-          
-
- 
-        </div>
-      </section>
-    
-    <section class="obtain">
-        <div class="izq">
-
-            <h2>¿Qué obtendrás de esta <span class="blue">experiencia?</span></h2>
-            <ul>
-                <li>Aprenderás <strong>fórmulas de manejo del dinero</strong> para alcanzar la rentabilidad sostenible en tu negocio</li>
-                <li>Recursos prácticos que te ayuden a <strong>tomar decisiones financieras y de liderazgo.</strong></li>
-                <li>Conocerás de <strong>estrategias de comunicación</strong> que te permitan aumentar el cierre de ventas.</li>
-                <li>Descubrirás tu <strong>motor principal</strong> de trabajo que te lleve de estar agobiado a <strong>amar lo que haces cada día</strong>.</li>
-            </ul>
-        </div>
-        <div class="der">
-            <img src="../../assets/images/Bootcamp/action-day/13.png" alt="">
-        </div>
+  <!-- ¿QUÉ ES ACTIONLAB? -->
+  <main class="main">
+    <section class="main__description section-actionlab" id="programas">
+        <figure>
+            <img src="./assets/images/miscellaneous/about.png" alt="Sobre ActionLab" style="max-width: 350px; border-radius: 20px;">
+        </figure>
+      <div class="text">
+        <h2>¿Qué es ACTIONLAB?</h2>
+        <p class="subtitle" style="color: #da1a5d;">Un laboratorio de acción para líderes, equipos y empresas</p>
+        <p>ActionLab es un ecosistema de formación diseñado para quienes ya están construyendo: negocios en marcha, equipos que liderar, marcas que sostener. Unimos el pensamiento estratégico, la ejecución práctica y el desarrollo humano en un solo lugar.</p>
+        <ul>
+          <li>Formación corporativa y emprendedora</li>
+          <li>Acompañamiento personalizado</li>
+          <li>Cultura de bienestar empresarial</li>
+          <li>Resultados con propósito</li>
+        </ul>
+        <a href="#contacto" class="general-button" style="margin-top: 20px;">¡Quiero conocerlos!</a>
+      </div>
     </section>
-    <a href="#pay" class="btn">Quiero vivir esta experiencia </a>
 
-    <section class="final">
-        <h2 class="final__title">ADQUIRIR ENTRADA </h2>
-        <h3>¡Adquiere el impacto para todo un año, en tan solo un día!</h3>
-        <img src="../../assets/images/Bootcamp/action-day/14.png" alt="">
-        <div class="text">
-            <h3>ESTOS BONUS SUMAN $470</h3>
-            <h3 class="line2"><span>+BOOTCAMP = </span> $617</h3>
-            <h3 class="line3">PERO TU INVERSIÓN SERÁ</h3>
-            <h3 class="line4"><span class="tachado">$617</span> $147</h3>
-        </div>
-        <div class="container__pay-button" id="pay">
+    <!-- LIBRO -->
+    <section class=" book-section">
+      <h2>Nuestro libro<br>De la idea a la acción</h2>
+      <div class="book-bg">
 
-            <div class="pay-buttons">
-                <div class="container">
-                <h2>COMPRAR <span class="general">ENTRADA GENERAL ($147)</span></h2>
-<!--                 <h3>Recuerda enviarnos tu nombre <br>cédula y una foto del recibo a <br><span>info@actionlab.club o 098065907</span></h3>
- -->                <div class="buttons">
-                  <!--   <a href="https://payp.page.link/Vn8G" class="btn">PAGAR CON PAYPHONE</a> -->
-                  <button class="btn" style="border:none;" id="pay-general" data-price="147" data-description="Entrada General">Pagar Entrada General ($147)</button>
-
-                   
-                 
-                </div>
-            </div>
+        <div class="section-row">
+          <img src="./assets/images/index/book.png" alt="Libro ActionLab">
+          <div class="book-info">
+            <h2 style="font-weight: 700; color: #da1a5d;">Una guía escrita por hacedores para hacedores</h2>
+            <p>Este libro recoge nuestra filosofía: acción consciente, estrategia real. Muchas personas ya lo usan como guía práctica para hacer realidad sus ideas.</p>
+          <a href="#" class="btn-actionlab orange">Adquiérelo ahora</a>
         </div>
-        <div class="pay-buttons">
-            <div class="container">
-                <h2>COMPRAR <span class="vip">ENTRADA VIP ($167)</span></h2>
-<!--                 <h3>Recuerda enviarnos tu nombre <br>cédula y una foto del recibo a <br>info@actionlab.club o 098065907</h3>
- -->        
-                <div class="buttons">
-                    <button class="btn" style="border:none;" id="pay-vip" data-price="167" data-description="Entrada Vip">Pagar Entrada VIP ($167)</button>
-
-                </div>
-            </div>
-        </div>
-        </div>
-        <h2 class="transfer">PREFIERES HACER UNA <br>TRANSFERENCIA</h2>
-        <h3 class="transfer-sub">Te compartimos los datos de la misma, <span>envía tu comprobante de pago a info@actionlab.club</span></h3>
-        <img class="transferImg" src="../../assets/images/Bootcamp/action-day/transfer.png" alt="">
+      </div>
+      </div>
     </section>
-    <div class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Datos de la persona que asistira al Action Day</h2>
-            <div class="">
-                <label for="">Nombre</label>
-                <input type="text" name="name" >
-            </div>
-            <div class="">
-                <label for="">Correo</label>    
-                <input type="text" name="email" >
-            </div>
-            <div class="">
-                <label for="">Numero de teléfono </label>
-                <input type="tel" name="phone">
-            </div>
-            <div class="buttons">
-                <div class="blockButtons">
-                </div>
-                    <div id="paypal-button-container"></div>
 
-            </div>
+    <!-- SOLUCIONES ACTIONLAB (NUEVA SECCIÓN) -->
+    <section class="section-actionlab" id="soluciones">
+      <h2>Soluciones ACTIONLAB</h2>
+      <p class="subtitle" style="color: #1db6be;">Formación y acompañamiento estratégico</p>
+      <div class="section-row">
+        <div class="card-actionlab">
+          <h3>Formación y capacitaciones</h3>
+          <p>Cursos, bootcamps y experiencias educativas que integran desarrollo personal con herramientas prácticas</p>
         </div>
+        <div class="card-actionlab">
+          <h3>Mentorías y asesorías personalizadas</h3>
+          <p>Espacios uno a uno para trazar hojas de ruta claras, tomar decisiones estratégicas y desbloquear tu siguiente nivel</p>
+        </div>
+        <div class="card-actionlab">
+          <h3>Programas corporativos</h3>
+          <p>Entrenamientos diseñados a la medida de equipos y organizaciones que buscan resultados sostenibles.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MIEMBROS DEL EQUIPO ACTIONLAB -->
+    <section class="main__description section-actionlab" id="equipo">
+      <h2 style="text-align:center;">Nuestro Equipo</h2>
+      <div class="section-row" style="justify-content:center;">
+        <div class="card-actionlab" style="align-items:center;">
+          <img src="./assets/images/speakers/diana.png" alt="Diana Aveiga" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+          <h3 style="margin-bottom:5px;">Diana Aveiga</h3>
+          <p style="font-size:0.95rem; color:#888; margin-bottom:10px;">Innovación & Estrategia</p>
+        </div>
+        <div class="card-actionlab" style="align-items:center;">
+          <img src="./assets/images/speakers/carla.png" alt="Carla Cañarte" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+          <h3 style="margin-bottom:5px;">Carla Cañarte</h3>
+          <p style="font-size:0.95rem; color:#888; margin-bottom:10px;">Comunicación & Storytelling</p>
+         
+        </div>
+        <div class="card-actionlab" style="align-items:center;">
+          <img src="./assets/images/speakers/eduardo.png" alt="Eduardo Spandre" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+          <h3 style="margin-bottom:5px;">Eduardo Spandre</h3>
+          <p style="font-size:0.95rem; color:#888; margin-bottom:10px;">Coaching & Negocios</p>
+  
+        </div>
+        <div class="card-actionlab" style="align-items:center;">
+          <img src="./assets/images/speakers/elsa.png" alt="Elsa Santelices" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+          <h3 style="margin-bottom:5px;">Elsa Santelices</h3>
+          <p style="font-size:0.95rem; color:#888; margin-bottom:10px;">Liderazgo & Desarrollo</p>
+
+        </div>
+        <div class="card-actionlab" style="align-items:center;">
+          <img src="./assets/images/speakers/jhony.png" alt="Johnny Escobar" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+          <h3 style="margin-bottom:5px;">Johnny Escobar</h3>
+          <p style="font-size:0.95rem; color:#888; margin-bottom:10px;">Finanzas & Estrategia</p>
+
+        </div>
+        <div class="card-actionlab" style="align-items:center;">
+          <img src="./assets/images/speakers/who.png" alt="Eliana Salas" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+          <h3 style="margin-bottom:5px;">Eliana Salas</h3>
+          <p style="font-size:0.95rem; color:#888; margin-bottom:10px;">Talento Humano</p>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- TESTIMONIOS -->
+<!--     <section class="main__description section-actionlab" id="testimonios">
+      <h2>¿Qué dicen nuestros asistentes?</h2>
+      <div class="section-row">
+        <div class="testimonio-card">
+          <h3>Historias que cambian vidas</h3>
+          <ul>
+            <li>Jenny Macio: "Después de la cirugía no tuve ningún dolor"</li>
+            <li>Irene Bonachila: "No sabía que tenía catarata"</li>
+            <li>Blanca Pico: "Pude recuperar mi visión"</li>
+          </ul>
+          <div class="testimonios-placeholder">aquí van los testimonios</div>
+        </div>
+        <div class="testimonio-img-card">
+          <img src="./assets/images/miscellaneous/testimonio-phone.png" alt="Testimonio video">
+        </div>
+      </div>
+    </section> -->
+  </main>
+
+  <!-- CONTACTO/FOOTER -->
+  <footer id="contacto">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-item">
+          <img src="./assets/images/logos/logo-complete-white.png" alt="logo" class="footer-logo">
+          <p class="footer-text">Somos un equipo que busca convertirse en un socio en el viaje hacia tu éxito empresarial y personal.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/actionlab.club/" target="_blank" class="social-link">
+              <img src="./assets/images/icons/instagram.webp" alt="instagram" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/company/actionlabclub/" target="_blank" class="social-link">
+              <img src="./assets/images/icons/linkedin.webp" alt="linkedin" class="social-icon">
+            </a>
+          </div>
+        </div>
+        <div class="footer-item">
+          <h3 class="footer-title">Enlaces</h3>
+          <ul class="footer-list">
+            <li class="footer-list-item"><a href="#programas" class="footer-link">Programas</a></li>
+            <li class="footer-list-item"><a href="#soluciones" class="footer-link">Soluciones</a></li>
+            <li class="footer-list-item"><a href="#eventos" class="footer-link">Eventos</a></li>
+            <li class="footer-list-item"><a href="#testimonios" class="footer-link">Testimonios</a></li>
+          </ul>
+        </div>
+        <div class="footer-item">
+          <h3 class="footer-title">Contacto</h3>
+          <ul class="footer-list">
+            <li class="footer-list-item">
+              <a href="https://wa.link/f69cw0" target="_blank" class="footer-link">
+                <img src="./assets/images/icons/whatsapp.webp" alt="whatsapp" class="footer-icon">
+                +593 99 6403 4840
+              </a>
+            </li>
+            <li class="footer-list-item">
+              <a href="https://www.instagram.com/actionlab.club/" target="_blank" class="footer-link">
+                <img src="./assets/images/icons/instagram.webp" alt="instagram" class="footer-icon">
+                @actionlab
+              </a>
+            </li>
+            <li class="footer-list-item">
+              <a href="https://www.linkedin.com/company/actionlabclub/" target="_blank" class="footer-link">
+                <img src="./assets/images/icons/linkedin.webp" alt="linkedin" class="footer-icon">
+                ActionLab
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="loader" id="loader" style="display:none;"></div>
-
-    <section class="video-testimonials">
-
-        <h2 class="title">¿Qué dicen de nuestros eventos?</h2>
-        <div class="video-container">
-            <video src="../../assets/videos/bootcamp/action-day/1.mp4" poster="/assets/images/Bootcamp/action-day/poster-video.png" playsinline controls></video>
-            <video src="../../assets/videos/bootcamp/action-day/2.mp4" poster="/assets/images/Bootcamp/action-day/poster-video.png" playsinline controls></video>
-            <video src="../../assets/videos/bootcamp/action-day/3.mp4" poster="/assets/images/Bootcamp/action-day/poster-video.png" playsinline controls></video>
-            <video src="../../assets/videos/bootcamp/action-day/4.mp4" poster="/assets/images/Bootcamp/action-day/poster-video.png" playsinline controls></video>
-            <video src="../../assets/videos/bootcamp/action-day/5.mp4" poster="/assets/images/Bootcamp/action-day/poster-video.png" playsinline controls></video>
-        </div>
-    </section>
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<script src="https://www.paypal.com/sdk/js?client-id=AZDdlO1sk1xYrUuVgUCk20zmib9zcF1W0KutgnQlMSkrjg5Kn-VZJqVVrLA9dYnSeIGSQIDczc53_GOD&components=buttons&currency=USD&locale=es_EC"></script>
-   
-
-<script>
-    const modal = document.querySelector('.modal');
-    const btn = document.getElementById('pay-general');
-    const span = document.getElementsByClassName("close")[0];
-    const nameInput = document.querySelector('input[name="name"]');
-    const emailInput = document.querySelector('input[name="email"]');
-    const phoneInput = document.querySelector('input[name="phone"]');
-    const blockButtons = document.querySelector('.blockButtons');
-
-    document.querySelectorAll('.btn[data-price]').forEach(button => {
-        button.addEventListener('click', function() {
-            const price = this.getAttribute('data-price');
-            const description = this.getAttribute('data-description'); 
-            modal.style.display = "flex";
-            document.getElementById('paypal-button-container').setAttribute('data-price', price);
-            document.getElementById('paypal-button-container').setAttribute('data-description', description);
-            renderPaypalButtons(price, description);
-        });
-    });
-
-    btn.onclick = function() {
-        modal.style.display = "flex";
-    }
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-    function validateInputs() {
-     
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (nameInput.value.trim() && emailRegex.test(emailInput.value) && phoneInput.value.trim()) {
-            blockButtons.style.height = '0'; 
-        } else {
-            blockButtons.style.height = '100%'; 
-        }
-    }
-
-    nameInput.addEventListener('input', validateInputs);
-    emailInput.addEventListener('input', validateInputs);
-    phoneInput.addEventListener('input', validateInputs);
-    validateInputs();
-
-    blockButtons.addEventListener('click', function() {
-        let message = 'Debes llenar todos los datos correctamente antes de proceder al pago: ';
-        let errors = [];
-
-        if (!nameInput.value.trim()) {
-            errors.push('el nombre está vacío');
-        }
-        if (!emailInput.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-            errors.push('el correo es inválido o está vacío');
-        }
-        if (!phoneInput.value.trim()) {
-            errors.push('el teléfono está vacío');
-        }
-
-        if (errors.length > 0) {
-            Toastify({
-                text: message + errors.join(', '),
-                duration: 3000,
-                close: true,
-                gravity: "top", 
-                position: 'center', 
-                backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
-                style: {
-                    lineheight: "1.5",
-                  },
-                className: "info",
-            }).showToast();
-        }
-    });
-
-    function renderPaypalButtons(price,description) {
-        if (window.paypalButtonInstance) {
-            window.paypalButtonInstance.close();
-        }
-        window.paypalButtonInstance = paypal.Buttons({
-            style: {
-                layout: 'vertical',
-                color: 'blue',
-                shape: 'rect',
-                label: 'paypal'
-            },
-        createOrder: function(data, actions) {
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: price
-                    }
-                }],
-                application_context: {
-                    shipping_preference: 'NO_SHIPPING' 
-                }
-            });
-        },
-        onApprove: function(data, actions) {
-            return actions.order.capture().then(function(details) {
-                console.log(details)
-                document.getElementById('loader').style.display = 'none';
-                Toastify({
-                    text: 'Su pago se ha realizado correctamente. En breve recibirá un correo de confirmación.',
-                    duration: 3000,
-                    close: true,
-                    gravity: "top", 
-                    position: 'center', 
-                    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
-                    style: {
-                        lineheight: "1.5",
-                      },
-                    className: "info",
-                }).showToast();
-
-                fetch('https://email-action-lab.vercel.app/tickets', { 
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    entryType: description, 
-                    pricePaid: details.purchase_units[0].amount.value, 
-                    name: nameInput.value,
-                    email: emailInput.value,
-                    phone: phoneInput.value,
-                    orderNumber: details.id, 
-                    transactionStatus: details.status
-                })
-            }).then(response => {
-                if (!response.ok) {
-                    throw new Error('Error en la creación del ticket');
-                }
-                return response.json();
-            }).then(data => {
-                console.log('Ticket creado:', data);
-               
-            }).catch(error => {
-                console.error('Error creando ticket:', error);
-            });
-                fetch('https://email-action-lab.vercel.app/send-email', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        to: ['info@actionlab.club', emailInput.value],
-                        subject: 'Confirmación de Pago',
-                        html: `
-                        <div style="font-family: Arial, max-width:600px; sans-serif; color: #333;">
-                            <h1 style="color: #4A90E2;">¡Gracias por tu compra, ${nameInput.value}!</h1>
-                            <p style="color:black">Queremos confirmar los detalles de tu compra y proporcionarte la información relevante de tu pedido.</p>
-                            <hr style="border: none; height: 1px; background-color: #ccc;" />
-                            <h2 style="color:black" >Detalles del Pedido:</h2>
-                            <ul>
-                                <li style="color:black"><strong>Entrada:</strong> ${description}</li>
-                                <li style="color:black"><strong>Precio pagado:</strong> $${price}</li>
-                                <li style="color:black"><strong>Nombre:</strong> ${nameInput.value}</li>
-                                <li style="color:black"><strong>Correo:</strong> ${emailInput.value}</li>
-                                <li style="color:black"><strong>Teléfono:</strong> ${phoneInput.value}</li>
-                                <li style="color:black"><strong>Número de Orden:</strong> ${details.id}</li>
-                                <li style="color:black"><strong>Estado de la Transacción:</strong> ${details.status}</li>
-                            </ul>
-                            <p style="color:black">Si tienes alguna pregunta o necesitas ayuda adicional, no dudes en contactarnos.</p>
-                            <p style="font-size: 0.9em; color:black;">Saludos,<br>El Equipo de ActionLab</p>
-                        </div>
-                    `
-                    })
-                }).then(response => response.json())
-                .then(data => {
-                    Toastify({
-                        text: 'El correo de confirmación ha sido enviado correctamente. ¡Gracias por tu compra!',
-                        duration: 3000,
-                        close: true,
-                        gravity: "top", 
-                        position: 'center', 
-                        backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
-                        style: {
-                            lineheight: "1.5",
-                          },
-                        className: "info",
-                    }).showToast();
-                    
-                    console.log('Correo enviado:', data);
-
-                })
-                .catch(error => {
-                    Toastify({
-                        text: 'Su pago se ha realizado correctamente, pero hubo un error al enviar el correo de confirmación. Por favor, contáctenos para confirmar su pago.',
-                        duration: 3000,
-                        close: true,
-                        gravity: "top", 
-                        position: 'center', 
-                        backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
-                        style: {
-                            lineheight: "1.5",
-                          },
-                        className: "info",
-                    }).showToast();
-                    console.error('Error enviando correo:', error);
-                });
-            });
-        },
-        onError: function(err) {
-            document.getElementById('loader').style.display = 'none';
-            console.error('Error en el pago con PayPal:', err);
-        }
-    })
-    window.paypalButtonInstance.render('#paypal-button-container');
-}
-</script>
-
-<script src="../../js/schedule.js"></script>
+  </footer>
+  <script src="./js/menu.js"></script>
 
 </body>
 </html>

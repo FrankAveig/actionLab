@@ -8,7 +8,7 @@ body {
   margin: 0;
   position: relative;
   background-color: #F6F7FD;
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: poppins, sans-serif;
   z-index: 1;
 }
@@ -20,7 +20,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 98%;
+  width: 100%;
+  box-sizing: border-box;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -69,6 +70,10 @@ body {
   }
   .header .header__navigation ul li {
     font-size: 12px;
+
+  }
+  .header .header__navigation ul li a {
+    color: black;
   }
 }
 
@@ -180,8 +185,7 @@ body {
   position: absolute;
   top: 0;
   z-index: -1;
-  width: 100%;
-  height: 100%;
+  width: 100vw;  height: 100%;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
